@@ -25,7 +25,7 @@ class Animal {
     }
 }
 
-class Cachorro extends Animal{
+class Cachorro extends Animal {
     latir() {
         console.log("Au Au!")
     }
@@ -60,7 +60,7 @@ class Cadastro {
     }
 }
 
-class CadastroCompleto extends Cadastro{
+class CadastroCompleto extends Cadastro {
     constructor(nome, idade, cpf, senha) {
         super(nome, idade, cpf)
         this.senha = senha
@@ -111,7 +111,7 @@ class Produto {
     }
 
     set valorAlterado(valor) {
-        return this.valor -= valor 
+        return this.valor -= valor
     }
 
 }
@@ -152,7 +152,7 @@ class Heroi extends Personagem {
     }
 
     calcularMedia() {
-        if(this.pontos.length === 0) return 0
+        if (this.pontos.length === 0) return 0
         const soma = this.pontos.reduce((acc, n) => acc + n, 0)
         return soma / this.pontos.length
     }
@@ -173,11 +173,11 @@ class Batalha {
     }
 
     duelar() {
-        if(this.personagem1._poder > this.personagem2._poder) {
+        if (this.personagem1._poder > this.personagem2._poder) {
             console.log(`${this.personagem1.nome} venceu!`)
-        }else if(this.personagem2._poder < this.personagem1._poder) {
+        } else if (this.personagem2._poder < this.personagem1._poder) {
             console.log(`${this.personagem2.nome} venceu!`)
-        }else {
+        } else {
             console.log("Deu empate")
         }
     }
@@ -199,7 +199,7 @@ batalha.duelar()
 //////
 
 class Carro {
-    constructor(marca, modelo, ano ) {
+    constructor(marca, modelo, ano) {
         this.marca = marca
         this.modelo = modelo
         this.ano = ano
@@ -223,7 +223,7 @@ class Animais {
     }
 
     emitirSom() {
-         console.log("emetindo som...")
+        console.log("emetindo som...")
     }
 }
 
@@ -262,3 +262,80 @@ const product1 = new Mercado("arroz", 15)
 console.log(product1.precoFormatados)
 product1.desconto = 10
 console.log(product1.precoFormatados)
+
+/////////
+
+class Bradesco {
+    constructor(nome, saldo) {
+        this.nome = nome
+        this._saldo = saldo
+    }
+
+    depositar(valor) {
+        if (valor === 0) {
+            console.log("sem valor")
+            return
+        }
+
+        this._saldo += valor
+    }
+
+
+    get saldo() {
+        return this._saldo
+    }
+
+    set sacar(valor) {
+        if (valor < 0) {
+            console.log("saldo inválido.")
+            return
+        }
+
+        if (valor > 3000) {
+            console.log("limite por dia somente: 2500R$")
+            return
+        }
+
+        this._saldo -= valor
+    }
+}
+
+const user1 = new Bradesco("vinicius", 150)
+
+console.log("valor do saldo em conta:", user1._saldo)
+
+user1.sacar = 50
+
+console.log("valor do saldo pós retirado:", user1._saldo)
+user1.depositar(100)
+
+console.log("saldo em conta:", user1._saldo)
+
+///////
+const user2 = new Bradesco("ana clara", 300)
+console.log("valor do saldo em conta:", user2._saldo)
+
+user2.depositar(300)
+console.log("valor do saldo em conta:", user2._saldo)
+
+user2.sacar = 200
+console.log("valor do saldo pós saque:", user2._saldo)
+
+
+//////////////////////
+
+class Conceseionaria {
+    constructor(marca, modelo, ano) {
+        this.marca = marca
+        this.modelo = modelo
+        this.ano = ano
+    }
+
+    idadeDoCarro() {
+        const anoAtual = 2025
+        return anoAtual - this.ano
+    }
+}
+
+const carro1 = new Conceseionaria("Toyota", "Hilux", 2001)
+console.log(carro1.idadeDoCarro())
