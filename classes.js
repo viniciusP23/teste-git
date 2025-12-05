@@ -331,9 +331,10 @@ class Conceseionaria {
         this.ano = ano
     }
 
-    idadeDoCarro() {
+    idadeDoCarro(valor) {
         const anoAtual = 2025
         return anoAtual - this.ano
+  
     }
 }
 
