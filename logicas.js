@@ -187,3 +187,91 @@ function verOnline() {
 }
 
 console.log(verOnline())
+
+//
+
+function calcularMedia(...valores) {
+    let somas = 0
+
+    for(let i = 0; i < valores.length; i++) {
+        somas += valores[i]
+    }
+
+    return somas / valores.length
+}
+
+console.log(calcularMedia(10, 20, 30, 50))
+
+//
+
+function contarPalavras(palavras, letras) {
+    let contador = 0
+
+    for(let i = 0; i < palavras.length; i++) {
+        if(palavras[i] === letras) {
+            contador += 1
+        }
+    }
+
+    return contador
+}
+
+console.log(contarPalavras("vinicius", "u"))
+
+//
+
+function somandoPares(valor) {
+    let somas = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        if(valor[i] % 2 === 0) {
+            somas += valor[i]
+        }
+    }
+
+    return somas
+}
+
+console.log(somandoPares([10, 55, 20, 33, 40]))
+
+//
+
+function filterTransform(palavra) {
+    let arrayNome = []
+
+    for(let i = 0; i < palavra.length; i++) {
+        let nome = palavra[i]
+
+        if(nome.length > 4) {
+            nome = nome.toUpperCase()
+            arrayNome.push(nome)
+        }
+    }
+
+    return arrayNome
+}
+
+console.log(filterTransform(["vini", "vinicius", "ana", "ana clara"]))
+
+//
+
+function frutasSelecionadas(frut) {
+    let caidaDeFrutas = []
+
+    for(let i = 0; i < frut.length; i++) {
+        let quitanda = frut[i]
+
+        if(quitanda.length > 5) {
+            quitanda = quitanda.toUpperCase()
+            caidaDeFrutas.push(quitanda)
+        }
+    }
+
+    return caidaDeFrutas
+}
+
+console.log(frutasSelecionadas(["abacate", "banana", "pera", "uva"]))
+
+//
+
+
