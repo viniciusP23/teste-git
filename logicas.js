@@ -326,3 +326,74 @@ console.log(somarNegativos(10, -5, -6, -7))
 
 //
 
+// O que entra?
+
+// O que sai?
+
+// Quais passos existem entre uma coisa e outra?
+
+// Existem repetições?
+
+// Existem decisões?
+
+function imparPar(...valor) {
+
+    let contadorPares = 0
+    let contadorImpar = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        if(valor[i] % 2 === 0) {
+            console.log(`valor ${valor[i]} é par`)
+                contadorPares++
+                
+        } else {
+            console.log(`valor ${valor[i]} é impar`)
+                contadorImpar++ 
+        }
+    }
+
+    
+    console.log(`Total de pares: ${contadorPares}`)
+    console.log(`Total de ímpares: ${contadorImpar}`)
+
+}
+console.log(imparPar(10, 12, 4, 13, 17, 9))
+
+//
+
+function encontrarMaior(...valores) {
+    let maior = valores[0]
+    let menor = valores[0]
+
+    for(let i = 0; i < valores.length; i++) {
+
+        if(valores[i] > maior) {
+            maior = valores[i]
+        }
+         if(valores[i] < menor) {
+            menor= valores[i]
+        }
+    }
+
+    return menor
+}
+
+console.log(encontrarMaior(10, 4, 25, 7, 3, 1))
+
+//
+
+function removerDuplicados(...valores) {
+    let unico = []
+
+    for(let i = 0; i < valores.length; i++) {
+        if(!unico.includes(valores[i])) {
+            unico.push(valores[i])
+        }
+    }
+
+    return unico
+}
+
+console.log(removerDuplicados(1, 2, 2, 3, 4, 4, 5))
+
+//
