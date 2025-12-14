@@ -397,3 +397,95 @@ function removerDuplicados(...valores) {
 console.log(removerDuplicados(1, 2, 2, 3, 4, 4, 5))
 
 //
+
+function ordenar(...valores) {
+    for(let i = 0; i < valores.length; i++) {
+        for( let j = 0; j < valores.length - 1; j++) {
+            
+            if(valores[j] > valores[j + 1]) {
+                let temp = valores[j]
+                valores[j] = valores[j + 1]
+                valores[j + 1 ] = temp
+            }
+        }
+    }
+
+    return valores
+}
+
+console.log(ordenar(5, 3, 8, 1, 2))
+
+//
+
+function segundoMaior(...valores) {
+    let maior = valores[0]
+    let segundo = Infinity
+
+    for(let i = 1; i < valores.length; i++) {
+        if(valores[i] > maior) {
+            segundo = maior
+            maior = valores[i]
+        }
+        else if(valores[i] > segundo && valores[i] < maior) {
+            segundo = valores[i]
+        }
+            
+
+    }
+
+    return segundo
+}
+
+console.log(segundoMaior(10, 4, 25, 7, 3))
+
+//
+
+function contatMaioresQue10(...valores) {
+    let contador = 0
+
+    for(let i = 0; i < valores.length; i++) {
+        if(valores[i] > 10) {
+            contador ++
+        }
+    }
+
+    return contador
+}
+
+console.log(contatMaioresQue10(5, 12, 20, 7, 15, 13))
+
+//
+
+function media(...valores) {
+    let soma = 0
+
+    for(let i = 0; i < valores.length; i++) {
+        soma += valores[i]
+    }
+
+    return soma / valores.length
+}
+
+console.log(media(10, 20, 30))
+
+//
+
+function maiorMenor(...valores) {
+    let maior = valores[0]
+    let menor = valores[0]
+
+    for(let i = 1; i < valores.length; i++) {
+        if(valores[i] > maior) {
+            maior = valores[i]
+        }
+
+        if(valores[i] < menor) {
+            menor = valores[i]
+        }
+    }
+
+    return {maior, menor}
+}
+
+console.log(maiorMenor(10, 4, 25, 7, 3))
+
