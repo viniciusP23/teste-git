@@ -489,3 +489,120 @@ function maiorMenor(...valores) {
 
 console.log(maiorMenor(10, 4, 25, 7, 3))
 
+//
+
+function contarNumPares(...valores) {
+    let contador = 0
+
+    for(let i = 0; i < valores.length; i++) {
+
+        if(valores[i] % 2 === 0) {
+            contador++
+        }
+    }
+
+    return contador
+}
+
+console.log(contarNumPares(1, 2, 4, 7, 8, 10))
+
+//
+
+function somarNumImpares(...valores) {
+    let acomulador = 0
+
+    for(let i = 0; i < valores.length; i++) {
+        if(valores[i] % 2 === 1) {
+            acomulador += valores[i]
+        }
+    }
+
+    return acomulador
+}
+
+console.log(somarNumImpares(1, 2, 3, 4, 5))
+
+//
+
+function encontrarMenor(...valores) {
+    let valorAtual = valores[0]
+
+    for(let i = 1; i < valores.length; i++) {
+        if(valores[i] < valorAtual) {
+            valorAtual = valores[i]
+
+        }
+    }
+
+    return valorAtual
+}
+
+console.log(encontrarMenor(10, 4, 25, 7, 3))
+
+//
+
+function contarEntre5e15(...valores) {
+    let contador = 0
+
+    for(let i = 0; i < valores.length; i++) {
+        if(valores[i] > 5 && valores[i] < 15) {
+            contador++
+        }
+    }
+
+    return contador
+}
+
+console.log(contarEntre5e15(2, 7, 10, 20, 14, 5,))
+
+//
+
+
+function primeiroMaiorQue10(...valores) {
+
+   for(let i = 0; i < valores.length; i++) {
+    if(valores[i] > 10) {
+        return valores[i]
+    }
+   }
+
+   return null
+}
+
+console.log(primeiroMaiorQue10(3, 7, 9, 12, 20))
+
+//
+
+function analizarNumeros(...valores) {
+    let pares = 0
+    let impares = 0
+    let soma = 0
+    let maior = valores[0]
+    let menor = valores[0]
+
+    for(let i = 0; i < valores.length; i++) {
+        if(valores[i] % 2 === 0) pares++
+        else impares++
+
+        soma += valores[i]
+
+        if(valores[i] > maior) {
+            maior = valores[i]
+        }
+        if(valores[i] < menor) {
+            menor = valores[i]
+        }
+        
+    }
+
+    return {
+        pares,
+        impares,
+        soma,
+        maior,
+        menor
+    }
+
+}
+
+console.log(analizarNumeros(10, 3, 8, 5, 2))
