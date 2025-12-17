@@ -313,7 +313,7 @@ function somarNegativos(...valores) {
 
     for (let i = 0; i < valores.length; i++) {
         if (valores[i] < 0) {
-            somas =  somas + valores[i]
+            somas = somas + valores[i]
         }
     }
 
@@ -341,18 +341,18 @@ function imparPar(...valor) {
     let contadorPares = 0
     let contadorImpar = 0
 
-    for(let i = 0; i < valor.length; i++) {
-        if(valor[i] % 2 === 0) {
+    for (let i = 0; i < valor.length; i++) {
+        if (valor[i] % 2 === 0) {
             console.log(`valor ${valor[i]} é par`)
-                contadorPares++
-                
+            contadorPares++
+
         } else {
             console.log(`valor ${valor[i]} é impar`)
-                contadorImpar++ 
+            contadorImpar++
         }
     }
 
-    
+
     console.log(`Total de pares: ${contadorPares}`)
     console.log(`Total de ímpares: ${contadorImpar}`)
 
@@ -365,13 +365,13 @@ function encontrarMaior(...valores) {
     let maior = valores[0]
     let menor = valores[0]
 
-    for(let i = 0; i < valores.length; i++) {
+    for (let i = 0; i < valores.length; i++) {
 
-        if(valores[i] > maior) {
+        if (valores[i] > maior) {
             maior = valores[i]
         }
-         if(valores[i] < menor) {
-            menor= valores[i]
+        if (valores[i] < menor) {
+            menor = valores[i]
         }
     }
 
@@ -385,8 +385,8 @@ console.log(encontrarMaior(10, 4, 25, 7, 3, 1))
 function removerDuplicados(...valores) {
     let unico = []
 
-    for(let i = 0; i < valores.length; i++) {
-        if(!unico.includes(valores[i])) {
+    for (let i = 0; i < valores.length; i++) {
+        if (!unico.includes(valores[i])) {
             unico.push(valores[i])
         }
     }
@@ -399,13 +399,13 @@ console.log(removerDuplicados(1, 2, 2, 3, 4, 4, 5))
 //
 
 function ordenar(...valores) {
-    for(let i = 0; i < valores.length; i++) {
-        for( let j = 0; j < valores.length - 1; j++) {
-            
-            if(valores[j] > valores[j + 1]) {
+    for (let i = 0; i < valores.length; i++) {
+        for (let j = 0; j < valores.length - 1; j++) {
+
+            if (valores[j] > valores[j + 1]) {
                 let temp = valores[j]
                 valores[j] = valores[j + 1]
-                valores[j + 1 ] = temp
+                valores[j + 1] = temp
             }
         }
     }
@@ -421,15 +421,15 @@ function segundoMaior(...valores) {
     let maior = valores[0]
     let segundo = Infinity
 
-    for(let i = 1; i < valores.length; i++) {
-        if(valores[i] > maior) {
+    for (let i = 1; i < valores.length; i++) {
+        if (valores[i] > maior) {
             segundo = maior
             maior = valores[i]
         }
-        else if(valores[i] > segundo && valores[i] < maior) {
+        else if (valores[i] > segundo && valores[i] < maior) {
             segundo = valores[i]
         }
-            
+
 
     }
 
@@ -443,9 +443,9 @@ console.log(segundoMaior(10, 4, 25, 7, 3))
 function contatMaioresQue10(...valores) {
     let contador = 0
 
-    for(let i = 0; i < valores.length; i++) {
-        if(valores[i] > 10) {
-            contador ++
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] > 10) {
+            contador++
         }
     }
 
@@ -459,7 +459,7 @@ console.log(contatMaioresQue10(5, 12, 20, 7, 15, 13))
 function media(...valores) {
     let soma = 0
 
-    for(let i = 0; i < valores.length; i++) {
+    for (let i = 0; i < valores.length; i++) {
         soma += valores[i]
     }
 
@@ -474,17 +474,17 @@ function maiorMenor(...valores) {
     let maior = valores[0]
     let menor = valores[0]
 
-    for(let i = 1; i < valores.length; i++) {
-        if(valores[i] > maior) {
+    for (let i = 1; i < valores.length; i++) {
+        if (valores[i] > maior) {
             maior = valores[i]
         }
 
-        if(valores[i] < menor) {
+        if (valores[i] < menor) {
             menor = valores[i]
         }
     }
 
-    return {maior, menor}
+    return { maior, menor }
 }
 
 console.log(maiorMenor(10, 4, 25, 7, 3))
@@ -494,9 +494,9 @@ console.log(maiorMenor(10, 4, 25, 7, 3))
 function contarNumPares(...valores) {
     let contador = 0
 
-    for(let i = 0; i < valores.length; i++) {
+    for (let i = 0; i < valores.length; i++) {
 
-        if(valores[i] % 2 === 0) {
+        if (valores[i] % 2 === 0) {
             contador++
         }
     }
@@ -511,8 +511,8 @@ console.log(contarNumPares(1, 2, 4, 7, 8, 10))
 function somarNumImpares(...valores) {
     let acomulador = 0
 
-    for(let i = 0; i < valores.length; i++) {
-        if(valores[i] % 2 === 1) {
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] % 2 === 1) {
             acomulador += valores[i]
         }
     }
@@ -527,8 +527,8 @@ console.log(somarNumImpares(1, 2, 3, 4, 5))
 function encontrarMenor(...valores) {
     let valorAtual = valores[0]
 
-    for(let i = 1; i < valores.length; i++) {
-        if(valores[i] < valorAtual) {
+    for (let i = 1; i < valores.length; i++) {
+        if (valores[i] < valorAtual) {
             valorAtual = valores[i]
 
         }
@@ -544,8 +544,8 @@ console.log(encontrarMenor(10, 4, 25, 7, 3))
 function contarEntre5e15(...valores) {
     let contador = 0
 
-    for(let i = 0; i < valores.length; i++) {
-        if(valores[i] > 5 && valores[i] < 15) {
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] > 5 && valores[i] < 15) {
             contador++
         }
     }
@@ -560,39 +560,39 @@ console.log(contarEntre5e15(2, 7, 10, 20, 14, 5,))
 
 function primeiroMaiorQue10(...valores) {
 
-   for(let i = 0; i < valores.length; i++) {
-    if(valores[i] > 10) {
-        return valores[i]
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] > 10) {
+            return valores[i]
+        }
     }
-   }
 
-   return null
+    return null
 }
 
 console.log(primeiroMaiorQue10(3, 7, 9, 12, 20))
 
 //
 
-function analizarNumeros(...valores) {
+function analisarNumeros(...valores) {
     let pares = 0
     let impares = 0
     let soma = 0
     let maior = valores[0]
     let menor = valores[0]
 
-    for(let i = 0; i < valores.length; i++) {
-        if(valores[i] % 2 === 0) pares++
+    for (let i = 0; i < valores.length; i++) {
+        if (valores[i] % 2 === 0) pares++
         else impares++
 
         soma += valores[i]
 
-        if(valores[i] > maior) {
+        if (valores[i] > maior) {
             maior = valores[i]
         }
-        if(valores[i] < menor) {
+        if (valores[i] < menor) {
             menor = valores[i]
         }
-        
+
     }
 
     return {
@@ -605,4 +605,98 @@ function analizarNumeros(...valores) {
 
 }
 
-console.log(analizarNumeros(10, 3, 8, 5, 2))
+console.log(analisarNumeros(10, 3, 8, 5, 2))
+
+//
+
+function analisarNotas(notas) {
+    let soma = 0
+    let maiorNota = notas[0]
+    let menorNota = notas[0]
+    let aprovados = 0
+    let reprovados = 0
+
+    for (let i = 0; i < notas.length; i++) {
+        soma += notas[i]
+
+        if (notas[i] > maiorNota) {
+            maiorNota = notas[i]
+        }
+
+        if(notas[i] < menorNota) {
+            menorNota = notas[i]
+        }
+
+        if(notas[i] >= 7) {
+            aprovados ++
+        }else {
+            reprovados ++
+        }
+    }
+
+    let media = soma / notas.length
+
+    return {
+        media: Number(media.toFixed(2)),
+        maiorNota,
+        menorNota,
+        aprovados,
+        reprovados
+    }
+}
+
+console.log(analisarNotas([5, 7, 10, 6, 8, 4]))
+
+//
+
+function analisarVendas(vendas) {
+    let totalVendas = 0
+    let maiorVenda = vendas[0]
+    let menorVenda = vendas[0]
+    let vendasAcimaDe100 = 0
+    let vendasAbaixoDe50 = 0
+
+    for(let i = 0; i < vendas.length; i++) {
+
+        totalVendas += vendas[i]
+         
+        if(vendas[i] > maiorVenda) {
+            maiorVenda = vendas[i]
+        }
+        if(vendas[i] < menorVenda) {
+            menorVenda = vendas[i]
+        }
+
+        if(vendas[i] > 100) {
+            vendasAcimaDe100++
+        }else if(vendas[i] < 50) {
+            vendasAbaixoDe50++
+        }
+
+    }
+
+    return {
+        totalVendas,
+        maiorVenda,
+        menorVenda,
+        vendasAcimaDe100,
+        vendasAbaixoDe50
+    }
+}
+
+console.log(analisarVendas([120, 45, 200, 30, 80, 150]))
+
+//
+
+const produtos = [
+  { nome: "Camisa", preco: 50 },
+  { nome: "Calça", preco: 120 },
+  { nome: "Tênis", preco: 300 },
+  { nome: "Meia", preco: 20 },
+  { nome: "Boné", preco: 80 }
+]
+
+function analisarProdutos(produtos) {
+
+    
+}
