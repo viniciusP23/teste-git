@@ -623,14 +623,14 @@ function analisarNotas(notas) {
             maiorNota = notas[i]
         }
 
-        if(notas[i] < menorNota) {
+        if (notas[i] < menorNota) {
             menorNota = notas[i]
         }
 
-        if(notas[i] >= 7) {
-            aprovados ++
-        }else {
-            reprovados ++
+        if (notas[i] >= 7) {
+            aprovados++
+        } else {
+            reprovados++
         }
     }
 
@@ -656,20 +656,20 @@ function analisarVendas(vendas) {
     let vendasAcimaDe100 = 0
     let vendasAbaixoDe50 = 0
 
-    for(let i = 0; i < vendas.length; i++) {
+    for (let i = 0; i < vendas.length; i++) {
 
         totalVendas += vendas[i]
-         
-        if(vendas[i] > maiorVenda) {
+
+        if (vendas[i] > maiorVenda) {
             maiorVenda = vendas[i]
         }
-        if(vendas[i] < menorVenda) {
+        if (vendas[i] < menorVenda) {
             menorVenda = vendas[i]
         }
 
-        if(vendas[i] > 100) {
+        if (vendas[i] > 100) {
             vendasAcimaDe100++
-        }else if(vendas[i] < 50) {
+        } else if (vendas[i] < 50) {
             vendasAbaixoDe50++
         }
 
@@ -688,15 +688,104 @@ console.log(analisarVendas([120, 45, 200, 30, 80, 150]))
 
 //
 
+
+// soma de todos os preços
+// nome do produto mais caro
+// nome do produto mais barato
+// quantos produtos custam > 100
+// quantos produtos custam < 50
+
 const produtos = [
-  { nome: "Camisa", preco: 50 },
-  { nome: "Calça", preco: 120 },
-  { nome: "Tênis", preco: 300 },
-  { nome: "Meia", preco: 20 },
-  { nome: "Boné", preco: 80 }
+    { nome: "Camisa", preco: 50 },
+    { nome: "Calça", preco: 120 },
+    { nome: "Tênis", preco: 300 },
+    { nome: "Meia", preco: 20 },
+    { nome: "Boné", preco: 80 }
 ]
 
 function analisarProdutos(produtos) {
+    let total = 0
+    let produtoMaisCaro = produtos[0]
+    let produtoMaisBarato = produtos[0]
+    let acimaDe100 = 0
+    let abaixoDe50 = 0
 
-    
+    for (let i = 0; i < produtos.length; i++) {
+        total += produtos[i].preco
+
+        if (produtos[i].preco > produtoMaisCaro.preco) {
+            produtoMaisCaro = produtos[i]
+        }
+
+        if (produtos[i].preco < produtoMaisBarato.preco) {
+            produtoMaisBarato = produtos[i]
+        }
+
+        if (produtos[i].preco > 100) acimaDe100++
+
+        if (produtos[i].preco < 50) abaixoDe50++
+
+
+
+    }
+
+    return {
+        total,
+        produtoMaisCaro: produtoMaisCaro.nome,
+        produtoMaisBarato: produtoMaisBarato.nome,
+        acimaDe100,
+        abaixoDe50
+    }
 }
+
+console.log(analisarProdutos(produtos))
+
+//
+
+// soma de todas as quantidades
+// soma de preco * quantidade
+// nome do produto com MAIOR preço unitário
+// nome do produto com MENOR preço unitário
+// quantos itens têm preco > 100
+
+const carrinho = [
+    { nome: "Camisa", preco: 50, quantidade: 2 },
+    { nome: "Calça", preco: 120, quantidade: 1 },
+    { nome: "Tênis", preco: 300, quantidade: 1 },
+    { nome: "Meia", preco: 20, quantidade: 3 }
+]
+
+function carrinhoCompras(carrinho) {
+    let totalDeItens = 0
+    let totalValor = 0
+    let produtoMaisCaro = carrinho[0]
+    let produtoMaisBarato = carrinho[0]
+    let produtoMaisQue100 = 0
+
+    for (let i = 0; i < carrinho.length; i++) {
+        totalDeItens += carrinho[i].quantidade
+
+        totalValor += carrinho[i].preco * carrinho[i].quantidade
+
+        if(carrinho[i].preco > produtoMaisCaro.preco) {
+            produtoMaisCaro = carrinho[i] 
+        }
+
+        if(carrinho[i].preco < produtoMaisBarato.preco) {
+            produtoMaisBarato = carrinho[i]
+        }
+
+        if(carrinho[i].preco > 100) produtoMaisQue100++
+
+    }
+
+    return {
+        totalDeItens,
+        totalValor,
+        produtoMaisCaro: produtoMaisCaro.nome,
+        produtoMaisBarato: produtoMaisBarato.nome,
+        produtoMaisQue100
+    }
+}
+
+console.log(carrinhoCompras(carrinho))
