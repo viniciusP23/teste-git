@@ -789,3 +789,179 @@ function carrinhoCompras(carrinho) {
 }
 
 console.log(carrinhoCompras(carrinho))
+
+//
+
+const carrinhoProdutos = [
+    { nome: "Camisa", preco: 50, quantidade: 2 },
+    { nome: "Calça", preco: 120, quantidade: 1 },
+    { nome: "Tênis", preco: 300, quantidade: 1 },
+    { nome: "Meia", preco: 20, quantidade: 3 }
+]
+
+function analisarCarrinho(carrinho) {
+    let totalDeItens = 0
+    let totalValor = 0
+    let produtoMaisCaro = carrinho[0]
+    let produtoMaisBarato = carrinho[0]
+
+
+    carrinho.forEach(produto => {
+        totalValor += produto.preco * produto.quantidade
+
+        totalDeItens += produto.quantidade 
+
+        if(produto.preco > produtoMaisCaro.preco) {
+            produtoMaisCaro = produto
+        }
+
+        if(produto.preco < produtoMaisBarato.preco) {
+            produtoMaisBarato = produto
+        }
+
+    });
+
+    return {
+        totalValor,
+        totalDeItens,
+        produtoMaisCaro: produtoMaisCaro.nome,
+        produtoMaisBarato: produtoMaisBarato.nome
+    }
+}
+
+console.log(analisarCarrinho(carrinhoProdutos))
+
+//
+
+function analisarMedias(notas) {
+    let soma = 0
+    let maiorNota = notas[0]
+    let menornota = notas[0]
+    let aprovados = 0
+    let reprovados = 0
+
+    for(let i = 0; i < notas.length; i++) {
+        soma += notas[i]
+
+        if(notas[i] > maiorNota) maiorNota = notas[i]
+        
+        if(notas[i] < menornota) menornota = notas[i]
+
+        if(notas[i] >= 7) {
+            aprovados++
+        } else {
+            reprovados++
+        }
+
+    }
+
+    let media = soma / notas.length
+    return {
+        media: Number(media.toFixed(2)),
+        maiorNota,
+        menornota,
+        aprovados,
+        reprovados
+    }
+}
+
+console.log(analisarMedias([5, 7, 10, 6, 8, 4]))
+
+//
+
+const pedidos = [
+    { cliente: "Ana", valor: 120 },
+    { cliente: "João", valor: 50 },
+    { cliente: "Maria", valor: 200 },
+    { cliente: "Pedro", valor: 80 },
+    { cliente: "Lucas", valor: 300 }
+]
+
+function analisarPedidos(pedidos) {
+    let total = 0
+    let maiorPedido = pedidos[0]
+    let menorPedido = pedidos[0]
+    let acimaDe100 = 0
+
+    for(let i = 0; i < pedidos.length; i++) {
+
+        total += pedidos[i].valor
+
+        if(pedidos[i].valor > maiorPedido.valor) {
+            maiorPedido = pedidos[i]
+        }
+
+        if(pedidos[i].valor < menorPedido.valor) {
+            menorPedido = pedidos[i]
+        }
+
+        if(pedidos[i].valor >= 100) {
+            acimaDe100++
+        }
+    }
+
+    let media = total / pedidos.length
+
+    return {
+        total,
+        media: Number(media.toFixed(2)),
+        maiorPedido: maiorPedido.cliente,
+        menorPedido: menorPedido.cliente,
+        acimaDe100,
+    }
+}
+
+console.log(analisarPedidos(pedidos))
+
+//
+
+const vendas = [
+    { produto: "Camisa", preco: 50, quantidade: 2 },
+    { produto: "Calça", preco: 120, quantidade: 1 },
+    { produto: "Tênis", preco: 300, quantidade: 1 },
+    { produto: "Meia", preco: 20, quantidade: 3 },
+    { produto: "Jaqueta", preco: 250, quantidade: 2 }
+]
+
+//   faturamento: 1080,
+//   totalItens: 9,
+//   produtoMaisCaro: "Tênis",
+//   produtoMaisBarato: "Meia",
+//   acimaDe100: 3,
+//   ticketMedio: 120
+
+function relatorioVendas(vendas) {
+    let faturamento = 0
+    let totalItens = 0
+    let produtoMaisCaro = vendas[0]
+    let produtoMaisBarato = vendas[0]
+    let acimaDe100 = 0
+
+    for(let i = 0; i < vendas.length; i++) {
+
+        faturamento += vendas[i].preco * vendas[i].quantidade
+
+        totalItens += vendas[i].quantidade
+
+        if(vendas[i].preco > produtoMaisCaro.preco) produtoMaisCaro = vendas[i]
+
+        if(vendas[i].preco < produtoMaisBarato.preco) produtoMaisBarato = vendas[i]
+        
+        if(vendas[i].preco >= 100) {
+            acimaDe100++
+        }
+    }
+
+    let ticketMedio = faturamento / totalItens
+
+    return {
+        faturamento,
+        totalItens,
+        produtoMaisCaro: produtoMaisCaro.produto,
+        produtoMaisBarato: produtoMaisBarato.produto,
+        acimaDe100,
+        ticketMedio: Number(ticketMedio.toFixed(2))
+    }
+}
+
+console.log(relatorioVendas(vendas))
