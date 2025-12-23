@@ -767,15 +767,15 @@ function carrinhoCompras(carrinho) {
 
         totalValor += carrinho[i].preco * carrinho[i].quantidade
 
-        if(carrinho[i].preco > produtoMaisCaro.preco) {
-            produtoMaisCaro = carrinho[i] 
+        if (carrinho[i].preco > produtoMaisCaro.preco) {
+            produtoMaisCaro = carrinho[i]
         }
 
-        if(carrinho[i].preco < produtoMaisBarato.preco) {
+        if (carrinho[i].preco < produtoMaisBarato.preco) {
             produtoMaisBarato = carrinho[i]
         }
 
-        if(carrinho[i].preco > 100) produtoMaisQue100++
+        if (carrinho[i].preco > 100) produtoMaisQue100++
 
     }
 
@@ -809,13 +809,13 @@ function analisarCarrinho(carrinho) {
     carrinho.forEach(produto => {
         totalValor += produto.preco * produto.quantidade
 
-        totalDeItens += produto.quantidade 
+        totalDeItens += produto.quantidade
 
-        if(produto.preco > produtoMaisCaro.preco) {
+        if (produto.preco > produtoMaisCaro.preco) {
             produtoMaisCaro = produto
         }
 
-        if(produto.preco < produtoMaisBarato.preco) {
+        if (produto.preco < produtoMaisBarato.preco) {
             produtoMaisBarato = produto
         }
 
@@ -840,14 +840,14 @@ function analisarMedias(notas) {
     let aprovados = 0
     let reprovados = 0
 
-    for(let i = 0; i < notas.length; i++) {
+    for (let i = 0; i < notas.length; i++) {
         soma += notas[i]
 
-        if(notas[i] > maiorNota) maiorNota = notas[i]
-        
-        if(notas[i] < menornota) menornota = notas[i]
+        if (notas[i] > maiorNota) maiorNota = notas[i]
 
-        if(notas[i] >= 7) {
+        if (notas[i] < menornota) menornota = notas[i]
+
+        if (notas[i] >= 7) {
             aprovados++
         } else {
             reprovados++
@@ -883,19 +883,19 @@ function analisarPedidos(pedidos) {
     let menorPedido = pedidos[0]
     let acimaDe100 = 0
 
-    for(let i = 0; i < pedidos.length; i++) {
+    for (let i = 0; i < pedidos.length; i++) {
 
         total += pedidos[i].valor
 
-        if(pedidos[i].valor > maiorPedido.valor) {
+        if (pedidos[i].valor > maiorPedido.valor) {
             maiorPedido = pedidos[i]
         }
 
-        if(pedidos[i].valor < menorPedido.valor) {
+        if (pedidos[i].valor < menorPedido.valor) {
             menorPedido = pedidos[i]
         }
 
-        if(pedidos[i].valor >= 100) {
+        if (pedidos[i].valor >= 100) {
             acimaDe100++
         }
     }
@@ -937,17 +937,17 @@ function relatorioVendas(vendas) {
     let produtoMaisBarato = vendas[0]
     let acimaDe100 = 0
 
-    for(let i = 0; i < vendas.length; i++) {
+    for (let i = 0; i < vendas.length; i++) {
 
         faturamento += vendas[i].preco * vendas[i].quantidade
 
         totalItens += vendas[i].quantidade
 
-        if(vendas[i].preco > produtoMaisCaro.preco) produtoMaisCaro = vendas[i]
+        if (vendas[i].preco > produtoMaisCaro.preco) produtoMaisCaro = vendas[i]
 
-        if(vendas[i].preco < produtoMaisBarato.preco) produtoMaisBarato = vendas[i]
-        
-        if(vendas[i].preco >= 100) {
+        if (vendas[i].preco < produtoMaisBarato.preco) produtoMaisBarato = vendas[i]
+
+        if (vendas[i].preco >= 100) {
             acimaDe100++
         }
     }
@@ -962,6 +962,99 @@ function relatorioVendas(vendas) {
         acimaDe100,
         ticketMedio: Number(ticketMedio.toFixed(2))
     }
+
+
 }
 
+const botao = document.getElementById("btnGerar")
+
+botao.addEventListener("click", () => {
+    const resultado = relatorioVendas(vendas)
+
+    document.getElementById("faturamento").textContent = resultado.faturamento
+    document.getElementById("totalItens").textContent = resultado.totalItens
+    document.getElementById("maisCaro").textContent = resultado.produtoMaisCaro
+    document.getElementById("maisBarato").textContent = resultado.produtoMaisBarato
+    document.getElementById("acima100").textContent = resultado.acimaDe100
+    document.getElementById("ticketMedio").textContent = resultado.ticketMedio
+})
+
+
 console.log(relatorioVendas(vendas))
+
+//
+
+
+const cotacoes = {
+    USD: 5.0,
+    EUR: 5.5
+}
+
+function converterMoeda(valorEmReal, moeda) {
+
+    moeda = moeda.toUpperCase()
+
+    if (!cotacoes[moeda]) {
+        return "Moeda Inválida"
+    }
+
+
+    return {
+        valorEmReal,
+        moeda,
+        valorConvertido: Number((valorEmReal / cotacoes[moeda]).toFixed(2))
+    }
+
+
+}
+
+console.log(converterMoeda(100, "USD"))
+console.log(converterMoeda(100, "EUR"))
+
+//
+
+function analiseDeNumeros(numero) {
+
+    let soma = 0
+    let maior = numero[0]
+    let menor = numero[0]
+    let pares = 0
+    let impares = 0
+
+    for(let i = 0; i < numero.length; i++) {
+
+        soma += numero[i]
+
+        if(numero[i] > maior) {
+            maior = numero[i]
+        }
+
+        if(numero[i] < menor) {
+            menor = numero[i]
+        }
+
+        if(numero[i] % 2 === 0) {
+            pares++
+        }else {
+            impares++
+        }
+
+    }
+
+    let media = soma / numero.length
+
+    return {
+        soma,
+        media: Number(media.toFixed(2)),
+        maior,
+        menor,
+        pares,
+        impares
+    }
+
+}
+
+console.log(analiseDeNumeros([10, 3, 8, 5, 2, 7, 9]))
+
+//
+
