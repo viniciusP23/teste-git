@@ -96,37 +96,82 @@ console.log(somarPedidos)
 
 //
 
-// acc = acumulador (objeto final)
 
-// item = cada venda
+function iparOuPar(valor) {
 
-// sempre retorna o acc
+    let contadorPar = 0
+    let contadorImpar = 0
 
-// compara usando item.preco
+    for(let i = 0; i < valor.length; i++) {
+        if(valor[i] % 2 === 0) {
+            contadorPar++
+        }
+        else{
+            contadorImpar++
+        }
+    }  
 
-// soma usando preco * quantidade
+    return {
+        contadorImpar,
+        contadorPar
+    }
+}
 
-const vendasEstoque = [
-    { produto: "Camisa", preco: 50, quantidade: 2 },
-    { produto: "Calça", preco: 120, quantidade: 1 },
-    { produto: "Tênis", preco: 300, quantidade: 1 },
-    { produto: "Meia", preco: 20, quantidade: 3 }
+console.log(iparOuPar([2, 7, 6, 22, 99]))
+
+//
+
+function maioresQue(valores) {
+
+    let maior = valores[0]
+    
+    for(let i = 1; i < valores.length; i++) {
+         if(valores[i] > maior) {
+            maior = valores[i]
+         }
+    }
+
+    return maior
+}
+
+console.log(maioresQue([10, 5, 20, 6, 7, 30]))
+
+//
+
+
+function somaTotal() {
+    let numeros = [10, 20, 30, 5]
+    let somar = 0
+
+    for(let i = 0; i < numeros.length; i++) {
+        somar += numeros[i]
+    }
+
+    return somar
+}
+
+console.log(somaTotal())
+
+//
+
+const produtos2 = [
+  { nome: "Camisa", preco: 50 },
+  { nome: "Calça", preco: 120 },
+  { nome: "Meia", preco: 20 }
 ]
 
-const resultado = vendasEstoque.reduce((acc, item) => {
-  
-    acc.faturamento = acc.quantidade * item.preco
+function loja(produtos) {
+    
+    let valorMaximo = 110
+    let filtrados = []
 
+    for(let i = 0; i < produtos.length; i++) {
+        if(produtos[i].preco <= valorMaximo) {
+            filtrados.push(produtos[i])
+        }
+    }
 
+    return filtrados
+}
 
-  return acc
-
-}, {
-  faturamento: 0,
-  totalItens: 0,
-  produtoMaisCaro: null,
-  produtoMaisBarato: null,
-  acimaDe100: 0
-})
-
-console.log(resultado)
+console.log(loja(produtos2))
