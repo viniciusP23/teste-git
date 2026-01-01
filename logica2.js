@@ -175,3 +175,180 @@ function loja(produtos) {
 }
 
 console.log(loja(produtos2))
+
+///
+
+function imparOuPar(valor) {
+   
+    if(valor % 2 === 0) {
+        return console.log("seu numero é par")
+    }else {
+        return console.log("seu numero é impar")
+    }
+
+}
+
+imparOuPar(7)
+
+//
+
+function somaDosNumeros(...valor) {
+    let soma = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        soma += valor[i]
+    }
+
+    return soma
+}
+
+console.log(somaDosNumeros(5, 3))
+
+//
+
+function maiorNumero(...valor) {
+
+    let maior = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        if(valor[i] > maior) {
+            maior = valor[i]
+        }
+    }
+
+    return maior
+}
+
+console.log(maiorNumero(10, 7))
+
+//
+
+function contarAte10() {
+
+    for(let i = 1; i <= 10; i++) {
+        console.log(i)
+    }
+}
+contarAte10()
+
+//
+
+function contarNumerosPares(valor) {
+    let numPares = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        if(valor[i] % 2 === 0) {
+            numPares++
+        }
+    }
+
+    return numPares
+}
+
+console.log(contarNumerosPares([1, 2, 3, 4, 6]))
+
+//
+
+function somarTodos(valor) {
+    let soma = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        soma += valor[i]
+    }
+
+    return soma
+}
+
+console.log(somarTodos([10, 5, 3]))
+
+//
+
+function encontrarMaiorNumero(valor) {
+    let maiorNumero = valor[0]
+
+   for(let i = 1; i < valor.length; i++) {
+        if(valor[i] > maiorNumero) {
+            maiorNumero = valor[i]
+        }
+   }
+
+   return maiorNumero
+}
+
+console.log(encontrarMaiorNumero([4, 20, 7, 1]))
+
+//
+
+function mediaCalcular(valor) {
+    let media = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        media += valor[i]
+    }
+
+    return media / valor.length
+}
+
+
+console.log(mediaCalcular([7, 8, 5, 9]))
+
+//
+
+function contarMaiorQue10(valor) {
+    
+    let contador = 0
+
+    for(let i = 0; i < valor.length; i++) {
+        if(valor[i] > 10) {
+            contador++
+        }
+    }
+
+    return contador
+}
+
+console.log(contarMaiorQue10([5, 12, 8, 20, 3]))
+
+//
+
+function analiseDeNumeros(valores) {
+    let soma = 0
+    let maior = valores[0]
+    let menor = valores[0]
+    let quantidadeDePares = 0
+    let quantidadeDeImpares = 0
+
+    for(let i = 0; i < valores.length; i++) {
+
+        soma += valores[i]
+
+        if(valores[i] > maior) {
+            maior = valores[i]
+        }
+
+         if(valores[i] < menor) {
+            menor = valores[i]
+        }
+
+        if(valores[i] % 2 === 0) {
+            quantidadeDePares++
+        }else {
+            quantidadeDeImpares++
+        }
+
+    }
+
+    let media = soma / valores.length
+
+    return {
+        soma,
+        media: Number(media.toFixed(2)),
+        maior,
+        menor,
+        quantidadeDePares,
+        quantidadeDeImpares
+    }
+}
+
+
+console.log(analiseDeNumeros([10, 3, 8, 5, 2, 7]))
