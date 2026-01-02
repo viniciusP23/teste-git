@@ -352,3 +352,158 @@ function analiseDeNumeros(valores) {
 
 
 console.log(analiseDeNumeros([10, 3, 8, 5, 2, 7]))
+
+//
+
+// {
+//   media: 7.00,
+//   aprovados: 2,
+//   reprovados: 2,
+//   maiorNota: "Maria",
+//   menorNota: "João"
+// }
+
+const alunos = [
+  { nome: "Ana", nota: 8 },
+  { nome: "João", nota: 5 },
+  { nome: "Maria", nota: 9 },
+  { nome: "Pedro", nota: 6 }
+]
+
+function mediaAlunos(valores) {
+    let aprovados = 0
+    let reprovados = 0
+    let soma = 0
+    let maiorNota = valores[0]
+    let menorNota = valores[0]
+
+    for(let i = 0; i < valores.length; i++) {
+        soma += valores[i].nota
+
+        if(valores[i].nota >= 7) {
+            aprovados ++
+        }else {
+            reprovados++
+        }
+
+        if(valores[i].nota > maiorNota.nota) {
+            maiorNota = valores[i]
+        }
+
+        if(valores[i].nota < menorNota.nota) {
+            menorNota = valores[i]
+        }
+    }
+
+    let media = soma / valores.length
+
+    return {
+        media: Number(media.toFixed(2)),
+        aprovados,
+        reprovados,
+        maiorNota: maiorNota.nome,
+        menorNota: menorNota.nome
+    }
+}
+
+console.log(mediaAlunos(alunos))
+
+//
+
+class Aluno {
+    constructor(nome, nota) {
+        this.nome = nome
+        this.nota = nota
+    }
+
+    aprovados() {
+        return this.nota >= 7
+    }
+}
+
+const a1 = new Aluno("vinicius", 8)
+const a2 = new Aluno("ana", 6)
+
+console.log(a1.aprovados())
+console.log(a2.aprovados())
+
+//
+
+class Produtos {
+    constructor(nome, preco) {
+        this.nome = nome
+        this.preco = preco
+    }
+
+    descricao() {
+        return `Produto: ${this.nome} - ${this.preco}`
+    }
+}
+
+const p1 = new Produtos("Camiseta", 50)
+const p2 = new Produtos("Calça", 150)
+
+console.log(p1.descricao())
+console.log(p2.descricao())
+
+//
+
+class Carrinho {
+    constructor() {
+        this.itens = []
+    }
+
+    adicionar(produto) {
+        this.itens.push(produto)
+    }
+
+    total() {
+        let soma = 0
+        for(let item of this.itens) {
+            soma += item.preco
+        }
+        return soma
+    }
+}
+
+const pr1 = new Produtos("Camisa", 50)
+const pr2 = new Produtos("Tênis", 300)
+
+const carrinho = new Carrinho()
+carrinho.adicionar(pr1)
+carrinho.adicionar(pr2)
+
+console.log(carrinho.total())
+
+//
+
+class ContaBancaria {
+    constructor(titular) {
+        this.titular = titular
+        this.saldo = 0
+    }
+
+    depositar(valor) {
+        this.saldo += valor
+    }
+
+    sacar(valor) {
+        if(valor > this.saldo) {
+            console.log("valor insuficiente.")
+        }else {
+            this.saldo -= valor
+        }
+    }
+
+    mostraSaldo() {
+        return this.saldo
+    }
+}
+
+const conta = new ContaBancaria("vinicius")
+conta.depositar(200)
+conta.sacar(50)
+console.log(conta.mostraSaldo())
+
+//
+
