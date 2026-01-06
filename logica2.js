@@ -507,3 +507,304 @@ console.log(conta.mostraSaldo())
 
 //
 
+class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome
+        this.idade = idade
+    }
+
+    apresentar() {
+        return `Olá meu nome é ${this.nome} e tenho ${this.idade} de idade`
+    }
+}
+
+const pessoa1 = new Pessoa("vinicius", 24)
+const pessoa2 = new Pessoa("ana clara", 22)
+
+console.log(pessoa1.apresentar())
+console.log(pessoa2.apresentar())
+
+//
+
+class Mercado {
+    constructor(nome, preco) {
+        this.nome = nome
+        this.preco = preco
+    }
+
+    desconto(percentual) {
+        this.preco -= this.preco * (percentual / 100)
+    }
+
+    descricao() {
+        return `Produto: ${this.nome} - ${this.preco}`
+    }
+}
+
+const conta01 = new Mercado("arroz", 20)
+conta01.desconto(20)
+console.log(conta01.descricao())
+
+//
+
+class ContaDoBanco {
+    constructor(titular) {
+        this.titular = titular
+        this.saldo = 0
+    }
+
+    depositar(valor) {
+        return this.saldo += valor
+    }
+
+    sacar(valor) {
+        if(valor > this.saldo) {
+            console.log("valor insuficiente.")
+        }else{
+            this.saldo -= valor
+        }
+    }
+
+    verSaldo() {
+        return this.saldo
+    }
+}
+
+const contaP1 = new ContaDoBanco("vinicius")
+contaP1.depositar(200)
+console.log(contaP1.verSaldo())
+contaP1.sacar(190)
+console.log(contaP1.verSaldo())
+
+//
+
+
+class Turma {
+    constructor() {
+        this.lista = []
+    }
+
+    adicionar(aluno) {
+        this.lista.push(aluno)
+    }
+
+    mediaDaTurma() {
+        let soma = 0
+
+        for(let aluno of this.lista) {
+            soma += aluno.nota
+        }
+
+        return (soma / this.lista.length).toFixed(2)
+    }
+
+    aprovados() {
+        let aprovados = []
+
+        for(let aluno of this.lista) {
+            if(aluno.nota >= 7) {
+                aprovados.push(aluno.nome)
+            }
+        }
+
+        return aprovados
+    }
+
+    reprovados() {
+        let reprovados = []
+        for (let aluno of this.lista) {
+            if (aluno.nota < 7) {
+                reprovados.push(aluno.nome)
+            }
+        }
+        return reprovados
+    }
+
+    maiorNota() {
+        let maior = this.lista[0]
+
+        for(let aluno of this.lista) {
+
+            if(aluno.nota > maior.nota) {
+                maior = aluno
+            }
+            
+        }
+
+        return maior.nome
+    }
+
+    menorNota() {
+        let menor = this.lista[0]
+
+        for(let aluno of this.lista) {
+
+            if(aluno.nota < menor.nota) {
+                menor = aluno
+            }
+            
+        }
+
+        return menor.nome
+    }
+
+}
+
+const turma = new Turma()
+
+turma.adicionar(new Aluno("Ana", 8))
+turma.adicionar(new Aluno("João", 5))
+turma.adicionar(new Aluno("Maria", 9))
+turma.adicionar(new Aluno("Pedro", 6))
+
+console.log("Média da turma:", turma.mediaDaTurma())
+console.log("Aprovados:", turma.aprovados())
+console.log("Reprovados:", turma.reprovados())
+console.log("Maior nota:", turma.maiorNota())
+console.log("Menor nota:", turma.menorNota())
+
+
+//
+
+class Caixa {
+    constructor() {
+        this.valores = []
+    }
+
+    adicionar(numero) {
+        this.valores.push(numero)
+    }
+
+    somarTudo() {
+        let soma = 0
+
+        for(let n of this.valores) {
+            soma += n 
+        }
+
+        return soma
+    }
+}
+
+const caixa = new Caixa()
+caixa.adicionar(10)
+caixa.adicionar(5)
+caixa.adicionar(3)
+console.log(caixa.somarTudo())
+
+//
+
+class NumerosPares {
+    constructor() {
+        this.lista = []
+    }
+
+    pegarNumeros(numeros) {
+        this.lista.push(numeros)
+    }
+
+    separarPares() {
+        let pares = 0
+
+        for(let n of this.lista) {
+            if(n % 2 === 0) {
+                pares++
+            }
+        }
+
+        return pares
+    }
+
+}
+
+const numerosPar = new NumerosPares()
+
+numerosPar.pegarNumeros(10)
+numerosPar.pegarNumeros(3)
+numerosPar.pegarNumeros(8)
+
+console.log(numerosPar.separarPares())
+
+//
+
+class Lista {
+    constructor() {
+        this.itens = []
+    }
+
+    adicionar(item) {
+        this.itens.push(item)
+    }
+
+    listar() {
+        return this.itens
+    }
+}
+
+const lista = new Lista()
+
+lista.adicionar("feijão")
+lista.adicionar("macarrão")
+console.log(lista.listar())
+
+//
+
+class Caixa2 {
+    constructor() {
+        this.valores = []
+    }
+
+    adicionar(valor) {
+        this.valores.push(valor)
+    }
+
+    total() {
+        let soma = 0
+
+        for(let n of this.valores) {
+            soma += n
+        }
+
+        return soma
+    }
+}
+
+const caixa2 = new Caixa2()
+caixa2.adicionar(50)
+caixa2.adicionar(100)
+console.log(caixa2.total())
+
+//
+
+class ProdutoMercado {
+    constructor(nome, preco) {
+        this.nome = nome
+        this.preco = preco
+    }
+}
+
+class CarrinhoDeCompras {
+    constructor() {
+        this.produtos = []
+    }
+
+    adicionar(produto) {
+        this.produtos.push(produto)
+    }
+
+    total() {
+        let soma = 0
+
+        for(let n of this.produtos) {
+            soma += n.preco
+        }
+
+        return soma
+    }
+}
+
+const carrinhos = new CarrinhoDeCompras()
+
+carrinhos.adicionar(new ProdutoMercado("arroz", 20))
+carrinhos.adicionar(new ProdutoMercado("macarrão", 10))
+console.log(carrinhos.total())
