@@ -808,3 +808,113 @@ const carrinhos = new CarrinhoDeCompras()
 carrinhos.adicionar(new ProdutoMercado("arroz", 20))
 carrinhos.adicionar(new ProdutoMercado("macarrão", 10))
 console.log(carrinhos.total())
+
+//
+
+class AlunosEscola {
+    constructor(nome, nota) {
+        this.nome = nome
+        this.nota = nota
+    }
+}
+
+class Turma4Ano {
+    constructor() {
+        this.alunos = []
+    }
+
+    adicionar(aluno){
+        this.alunos.push(aluno)
+    }
+
+    media() {
+        let soma = 0
+        
+        for(let aluno of this.alunos) {
+            soma += aluno.nota
+        }
+
+        return (soma / this.alunos.length).toFixed(2)
+    }
+
+    aprovados() {
+        let lista = []
+
+        for(let alunos of this.alunos) {
+            if(alunos.nota >= 7) {
+                lista.push(alunos.nome)
+            }
+        }
+
+        return lista
+    }
+
+    reprovados() {
+        let lista = []
+
+        for(let alunos of this.alunos) {
+            if(alunos.nota < 7) {
+                lista.push(alunos.nome)
+            }
+        }
+
+        return lista
+    }
+
+    maiorNota() {
+        let maior = this.alunos[0]
+
+        for(let aluno of this.alunos) {
+            if(aluno.nota > maior.nota) {
+                maior = aluno
+            }
+        }
+
+        return maior
+    }
+
+    menorNota() {
+        let menor = this.alunos[0]
+
+        for(let aluno of this.alunos) {
+            if(aluno.nota < menor.nota) {
+                menor = aluno
+            }
+        }
+
+        return menor
+    }
+
+    totalAlunos() {
+      return this.alunos.length
+    }
+
+    porgetagemAprovados() {
+       let aprovados = 0
+
+        for(let aluno of this.alunos) {
+            if(aluno.nota >= 7) {
+                aprovados++
+            }
+        }
+
+        return ((aprovados / this.totalAlunos()) * 100).toFixed(2)
+    }
+}
+
+const turma4 = new Turma4Ano()
+
+turma4.adicionar(new AlunosEscola("vinicius", 9))
+turma4.adicionar(new AlunosEscola("ana", 9))
+turma4.adicionar(new AlunosEscola("maria", 5))
+turma4.adicionar(new AlunosEscola("joao", 6))
+
+console.log(turma4.media())
+console.log(turma4.aprovados())
+console.log(turma4.reprovados())
+console.log(turma4.maiorNota())
+console.log(turma4.menorNota())
+console.log(turma4.totalAlunos())
+console.log((turma4.porgetagemAprovados()))
+
+//
