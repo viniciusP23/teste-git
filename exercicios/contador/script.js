@@ -188,7 +188,7 @@ function redenrizarTarefas() {
 
 //
 
-// EX: 8
+// EX: 9
 const inputCaracter = document.getElementById("caracter")
 const limitesCaracter = document.getElementById("mostrarCaracter")
 const btnCaracter = document.getElementById("btnCaracter")
@@ -203,4 +203,91 @@ btnCaracter.addEventListener("click", () => {
         limitesCaracter.innerHTML = `caractere: ${limite.length}/50`
     }
 
+})
+
+//
+
+// EX: 10
+
+const modoCE = document.getElementById("modoCE")
+let modo = false
+
+modoCE.addEventListener("click", () => {
+
+if(modo === true) {
+    modoCE.style.background = "#000"
+    modoCE.style.color = "#fff"
+    modoCE.innerHTML = "escuro🌙"
+    modo = false
+} else {
+    modoCE.style.background = "#b0c210"
+    modoCE.style.color = "#000"
+    modoCE.innerHTML = "claro☀️"
+    modo = true
+}
+
+})
+
+//
+
+// EX: 11
+
+const resultadoRes = document.getElementById("resultadoRes")
+
+function responder(correta) {
+
+    
+    if(correta) {
+        resultadoRes.innerHTML = "Resposta correta! ✅"
+    }else {
+        resultadoRes.innerHTML = "Resposta errada! ❌"
+    }
+
+}
+
+//
+
+// EX: 12
+
+const curtidas = document.getElementById("curtidas")
+const buttonCurtir = document.getElementById("curtir")
+
+let contadorLikes = 0
+let likes = false
+
+buttonCurtir.addEventListener("click", () => {
+
+    if(likes === false) {
+        contadorLikes++
+        curtidas.innerHTML = contadorLikes
+        buttonCurtir.innerHTML = "Curtido ❤️"
+        likes = true
+    } else {
+        contadorLikes--
+        curtidas.innerHTML = contadorLikes
+        buttonCurtir.innerHTML = "Curtir 🤍"
+        likes = false
+    }
+
+})
+
+//
+
+// EX: 13
+
+const inputPass = document.getElementById("senha-alerta")
+const senhaPass = document.getElementById("alerta")
+
+
+inputPass.addEventListener("input", () => {
+
+    let senha = inputPass.value.length
+
+    if(senha < 6) {
+        senhaPass.innerHTML = "senha fraca ❌"
+    } else if(senha < 10) {
+        senhaPass.innerHTML = "senha média ⚠️"
+    } else{
+        senhaPass.innerHTML = "senha forte ✅"
+    }
 })
