@@ -141,9 +141,107 @@ function averageTemperature(anualRegister) {
 
     let average = total / anualRegister.length
 
-    const averageConvert = ((5 * (average -32)) / 9).toFixed(2)
+    const averageConvert = ((5 * (average - 32)) / 9).toFixed(2)
 
     return averageConvert
 }
 
 console.log(averageTemperature(graus))
+
+///
+
+const numberMax = [10, 5, 74, 90, 3, 50]
+
+function getMaxNumber(numbers) {
+
+    let maior = numbers[0]
+
+    for(let i = 1; i < numbers.length; i++) {
+        if(numbers[i] > maior) {
+            maior = numbers[i]
+        }
+    }
+
+    return maior
+
+}
+
+console.log(getMaxNumber(numberMax))
+
+
+///
+
+const numeros = [1, 2, 3, 4, 5]
+
+const dobro = numeros.map(num => num * 2) 
+console.log(dobro)
+
+//
+
+const numberString = [10, 20, 30]
+
+const mudarString = numberString.map(n => n + "")
+console.log(mudarString)
+
+//
+
+const palavras = ["js", "react", "node"]
+
+const palavrasMaiuscula = palavras.map(n => n.toUpperCase())
+console.log(palavrasMaiuscula)
+
+//
+
+const preco = [100, 200, 300]
+
+const imposto = preco.map(i => i * 1.1)
+console.log(imposto)
+
+///
+
+
+const numbers = [1, 2, 3, 4, 5, 6]
+
+const numberPares = numbers.filter(n => n % 2 === 0)
+console.log(numberPares)
+
+//
+
+const idades = [12, 18, 20, 25, 16 ]
+
+const menorIdade = idades.filter(n => n < 18)
+console.log(menorIdade)
+
+//
+
+const palavrasMais5 = ["casa", "javascript", "sol", "programador"]
+
+const maioresPalavras = palavrasMais5.filter(n => n.length > 5 )
+console.log(maioresPalavras)
+
+//
+
+const precoMaiores = [80, 120, 200, 300]
+
+const maioresPreco = precoMaiores.filter(n => n > 150)
+console.log(maioresPreco)
+
+//
+
+const reduceNumber = [1, 2, 3, 4]
+
+const somarReduce = reduceNumber.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0 )
+console.log(somarReduce)
+
+//
+
+const maiorReduce = [10, 5, 20, 8]
+
+const reduceMaior = maiorReduce.reduce((maior, atual) => {
+    if(atual > maior) {
+        return atual
+    }
+
+    return maior
+})
+console.log(reduceMaior)
