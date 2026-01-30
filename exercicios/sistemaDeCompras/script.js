@@ -102,16 +102,48 @@ const Entrada =
 function productAnalysis(products) {
 
     let maiorpreco = products[0].price
-    
-    for(let i = 1; i < products.length; i++) {
+    let total = 0
 
-        if(products[i].price > maiorpreco.price) {
-            maiorpreco = products
+    for (let i = 1; i < products.length; i++) {
+
+        total += products[i].price
+
+        if (products[i].price > maiorpreco) {
+            maiorpreco = products[i].price
         }
     }
 
-    return maiorpreco
+    let media = total / products.length
+
+    return {
+        maiorpreco,
+        total,
+        media: Number(media.toFixed(2))
+    }
 
 }
 
 console.log(productAnalysis(Entrada))
+
+///
+
+
+const graus = [98, 95, 92, 88, 74, 106, 114, 90, 76, 65, 55, 80]
+
+function averageTemperature(anualRegister) {
+
+    let total = 0
+
+    for (let i = 0; i < anualRegister.length; i++) {
+
+        total += anualRegister[i]
+    }
+
+    let average = total / anualRegister.length
+
+    const averageConvert = ((5 * (average -32)) / 9).toFixed(2)
+
+    return averageConvert
+}
+
+console.log(averageTemperature(graus))
