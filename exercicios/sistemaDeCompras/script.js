@@ -156,8 +156,8 @@ function getMaxNumber(numbers) {
 
     let maior = numbers[0]
 
-    for(let i = 1; i < numbers.length; i++) {
-        if(numbers[i] > maior) {
+    for (let i = 1; i < numbers.length; i++) {
+        if (numbers[i] > maior) {
             maior = numbers[i]
         }
     }
@@ -173,7 +173,7 @@ console.log(getMaxNumber(numberMax))
 
 const numeros = [1, 2, 3, 4, 5]
 
-const dobro = numeros.map(num => num * 2) 
+const dobro = numeros.map(num => num * 2)
 console.log(dobro)
 
 //
@@ -207,7 +207,7 @@ console.log(numberPares)
 
 //
 
-const idades = [12, 18, 20, 25, 16 ]
+const idades = [12, 18, 20, 25, 16]
 
 const menorIdade = idades.filter(n => n < 18)
 console.log(menorIdade)
@@ -216,7 +216,7 @@ console.log(menorIdade)
 
 const palavrasMais5 = ["casa", "javascript", "sol", "programador"]
 
-const maioresPalavras = palavrasMais5.filter(n => n.length > 5 )
+const maioresPalavras = palavrasMais5.filter(n => n.length > 5)
 console.log(maioresPalavras)
 
 //
@@ -230,7 +230,7 @@ console.log(maioresPreco)
 
 const reduceNumber = [1, 2, 3, 4]
 
-const somarReduce = reduceNumber.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0 )
+const somarReduce = reduceNumber.reduce((acumulador, valorAtual) => acumulador + valorAtual, 0)
 console.log(somarReduce)
 
 //
@@ -238,10 +238,162 @@ console.log(somarReduce)
 const maiorReduce = [10, 5, 20, 8]
 
 const reduceMaior = maiorReduce.reduce((maior, atual) => {
-    if(atual > maior) {
+    if (atual > maior) {
         return atual
     }
 
     return maior
 })
 console.log(reduceMaior)
+
+///
+
+class Calculadora {
+
+    somar(a, b) {
+        return a + b
+    }
+
+    subtrair(a, b) {
+        return a - b
+    }
+
+    multplicar(a, b) {
+        return a * b
+    }
+
+    dividir(a, b) {
+        if (b === 0) {
+            alert("não pode dividir por 0")
+        } else {
+            return a / b
+        }
+    }
+}
+
+const calc = new Calculadora()
+
+console.log(calc.somar(2, 5))
+console.log(calc.subtrair(10, 5))
+console.log(calc.multplicar(2, 5))
+console.log(calc.dividir(10, 2))
+
+///
+
+class Produtos {
+    constructor(nome, preco, quantidade) {
+        this.nome = nome
+        this.preco = preco
+        this.quantidade = quantidade
+    }
+
+    valorTotal() {
+        return this.preco * this.quantidade
+    }
+
+    temEstoque() {
+        return this.quantidade > 0
+    }
+}
+
+const prod = new Produtos("arroz", 17.90, 0)
+
+console.log(prod.valorTotal())
+console.log(prod.temEstoque())
+
+///
+
+class Aluno {
+    constructor(nome, notas = []) {
+        this.nome = nome
+        this.notas = notas
+    }
+
+    media() {
+        let total = 0
+
+        for (let i = 0; i < this.notas.length; i++) {
+            total += this.notas[i]
+        }
+
+        return total / this.notas.length
+    }
+
+    situacao() {
+        const media = this.media()
+
+        if (media >= 7) {
+            return `Aprovado`
+        } else {
+            return `Reprovado`
+        }
+    }
+
+
+}
+
+const aluno = new Aluno("vinicius", [7, 5, 8, 10])
+console.log(aluno.media())
+console.log(aluno.situacao())
+
+///
+
+
+class Usuario {
+    constructor(nome, email, senha) {
+        this.nome = nome
+        this.email = email
+        this.senha = senha
+    }
+
+    validarEmail() {
+        return this.email.includes("@")
+    }
+
+    validarSenha() {
+        return this.senha.length >= 6
+    }
+}
+
+const user = new Usuario("vinicius", "vinicius_pereira1@live.com", "555556")
+console.log(user.validarSenha())
+
+///
+
+class Livro {
+    constructor(nome) {
+        this.nome = nome
+    }
+}
+
+class Blibioteca{
+    constructor() {
+        this.livros = []
+    }
+
+    adicionarLivro(livro) {
+        
+        this.livros.push(livro)
+    }
+
+    removerLivro(nomeLivro) {
+        this.livros = this.livros.filter(livro => livro.nome != nomeLivro)
+    }
+
+    listarLivros() {
+        return this.livros.map(livro => livro.nome)
+    }
+}
+
+const blibioteca = new Blibioteca()
+
+const livro1 = new Livro("harry potter")
+const livro2 = new Livro("senhos dos anéis")
+
+blibioteca.adicionarLivro(livro1)
+blibioteca.adicionarLivro(livro2)
+
+console.log(blibioteca.listarLivros())
+
+blibioteca.removerLivro("harry potter")
+console.log(blibioteca.listarLivros())
