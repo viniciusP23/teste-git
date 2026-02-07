@@ -397,3 +397,143 @@ console.log(blibioteca.listarLivros())
 
 blibioteca.removerLivro("harry potter")
 console.log(blibioteca.listarLivros())
+
+
+//
+
+function recebeParImpar(valor) {
+
+    if(valor % 2 === 0) {
+        return `par ${valor}`
+    }else {
+        return `impar ${valor}`
+    }
+
+
+}
+
+console.log(recebeParImpar(8))
+
+///
+
+
+function maiorNumero(num1, num2) {
+    if(num1 > num2) {
+        return `maior numero é ${num1}`
+    }else {
+        return `maior numero é ${num2}`
+    }
+
+}
+
+console.log(maiorNumero(5, 15))
+
+//
+
+function somaNumeros(num) {
+    let soma = 0
+    
+    for(let i = 1; i <= num; i++) {
+        soma += i
+    }
+
+    return soma
+}
+
+console.log(somaNumeros(5))
+
+///
+
+let valor = 5
+
+switch (valor) {
+    case 1: 
+        console.log("Domingo")
+    break
+
+    case 2: 
+        console.log("segunda-feira")
+    break
+
+    case 3: 
+        console.log("terça-feira")
+    break
+
+    case 4:
+        console.log("quarta-feira")
+    break
+
+    case 5: 
+        console.log("quinta-feira")
+    break
+
+    case 6:
+        console.log("sexta-feira")
+    break
+
+    case 7: 
+        console.log("sábado")
+    break
+    
+    default:
+        console.log("Inválido")
+}
+
+///
+
+
+let letra = "a"
+
+switch(letra) {
+
+    case "a": 
+        console.log("Excelente")
+    break
+
+    case "b": 
+        console.log("Bom")
+    break
+
+    case "c": 
+        console.log("Regular")
+    break
+
+    case "d": 
+        console.log("Ruim")
+    break
+
+    case "e": 
+        console.log("Reprovado")
+    break
+
+    default:
+        console.log("Inválido")
+}
+
+///
+
+let num1 = 10
+let num2 = 5
+let operacao = "-"
+
+switch(operacao) {
+
+    case "+": 
+        console.log(num1 + num2)
+    break
+
+    case "-": 
+        console.log(num1 - num2)
+    break
+
+    case "*": 
+        console.log(num1 * num2)
+    break
+
+    case "/": 
+        console.log(num1 / num2)
+    break
+
+    default:
+        console.log("Inválido")
+}
