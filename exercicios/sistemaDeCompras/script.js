@@ -551,3 +551,162 @@ switch (letra) {
     default:
         console.log("Consoante")
 }
+
+function contar2(valor) {
+
+    let soma = 0
+
+    for(let i = 0; i < valor; i++) {
+        if(i % 2 === 0) {
+            soma++
+        }
+    }
+    return soma
+
+}
+
+console.log(contar2(20))
+
+//
+
+function parImpar(num) {
+
+    if(num % 2 === 0) {
+        return `Par`
+    }else{
+        return `Impar`
+    }
+
+}
+
+console.log(parImpar(11))
+
+//
+
+function contador() {
+    for(let i = 1; i <= 15; i++) {
+        console.log(i)
+    }
+}
+contador()
+
+///
+
+
+function posiNegativo(valor) {
+    if(valor > 0) {
+        return `${valor} é positivo`
+    }else if(valor < 0) {
+        return `${valor} é negativo`
+    }else if(valor === 0) {
+        return `Valor 0`
+    }
+}
+
+console.log(posiNegativo(0))
+
+//
+
+function maiorDeIdade(valor) {
+
+    if(valor >= 18) {
+        return `maior de idade`
+    }else {
+        return `menor de idade`
+    }
+}
+
+console.log(maiorDeIdade(22))
+
+//
+
+function zeroADez(valor) {
+    if(valor >= 7) {
+        return `Aprovado`
+    }else if(valor >= 5) {
+        return `Recuperação`
+    }else {
+        return `Reprovado`
+    }
+}
+
+console.log(zeroADez(8))
+
+//
+
+function divisivel(valor) {
+    if(valor % 3 === 0 || valor % 5 === 0) {
+        return `${valor} valor divisivél por 3 e 5`
+    }else {
+        return `${valor} não é divisível por 3 e 5`
+    }
+}
+
+console.log(divisivel(3))
+
+
+function login(usuario, senha) {
+
+    if(usuario === "admin" && senha === "1234") {
+        return `login correto`
+    }else {
+        return `login ou senha incorreto`
+    }
+}
+
+console.log(login("admin", "1234"))
+
+//
+
+
+function mostrar10() {
+
+    for(let i = 1; i <= 10; i++) {
+        console.log(i)
+    }
+}
+mostrar10()
+
+//
+
+function paresAte20() {
+
+    for(let i = 1; i < 20; i++) {
+        if(i % 2 === 0) {
+            return i++
+        }
+    }
+}
+
+console.log(paresAte20())
+
+//
+
+function calcularAte100(valor) {
+
+    let soma = 0
+    for(let i = 0; i < valor; i++) {
+        soma += i
+    }
+
+    return soma
+}
+
+console.log(calcularAte100(100))
+
+
+function vogais() {
+    let palavra = "vinicius"
+    let contador = 0
+    let vogais = "aeiou"
+
+    for(let i = 0; i < palavra.length; i++) {
+        if(vogais.includes(palavra[i])) {
+            contador++
+        }
+    }
+
+    return contador
+}
+
+console.log(vogais())
