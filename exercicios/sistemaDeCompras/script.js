@@ -366,13 +366,13 @@ class Livro {
     }
 }
 
-class Blibioteca{
+class Blibioteca {
     constructor() {
         this.livros = []
     }
 
     adicionarLivro(livro) {
-        
+
         this.livros.push(livro)
     }
 
@@ -403,9 +403,9 @@ console.log(blibioteca.listarLivros())
 
 function recebeParImpar(valor) {
 
-    if(valor % 2 === 0) {
+    if (valor % 2 === 0) {
         return `par ${valor}`
-    }else {
+    } else {
         return `impar ${valor}`
     }
 
@@ -418,9 +418,9 @@ console.log(recebeParImpar(8))
 
 
 function maiorNumero(num1, num2) {
-    if(num1 > num2) {
+    if (num1 > num2) {
         return `maior numero é ${num1}`
-    }else {
+    } else {
         return `maior numero é ${num2}`
     }
 
@@ -432,8 +432,8 @@ console.log(maiorNumero(5, 15))
 
 function somaNumeros(num) {
     let soma = 0
-    
-    for(let i = 1; i <= num; i++) {
+
+    for (let i = 1; i <= num; i++) {
         soma += i
     }
 
@@ -447,34 +447,34 @@ console.log(somaNumeros(5))
 let valor = 5
 
 switch (valor) {
-    case 1: 
+    case 1:
         console.log("Domingo")
-    break
+        break
 
-    case 2: 
+    case 2:
         console.log("segunda-feira")
-    break
+        break
 
-    case 3: 
+    case 3:
         console.log("terça-feira")
-    break
+        break
 
     case 4:
         console.log("quarta-feira")
-    break
+        break
 
-    case 5: 
+    case 5:
         console.log("quinta-feira")
-    break
+        break
 
     case 6:
         console.log("sexta-feira")
-    break
+        break
 
-    case 7: 
+    case 7:
         console.log("sábado")
-    break
-    
+        break
+
     default:
         console.log("Inválido")
 }
@@ -484,27 +484,27 @@ switch (valor) {
 
 let letra = "a"
 
-switch(letra) {
+switch (letra) {
 
-    case "a": 
+    case "a":
         console.log("Excelente")
-    break
+        break
 
-    case "b": 
+    case "b":
         console.log("Bom")
-    break
+        break
 
-    case "c": 
+    case "c":
         console.log("Regular")
-    break
+        break
 
-    case "d": 
+    case "d":
         console.log("Ruim")
-    break
+        break
 
-    case "e": 
+    case "e":
         console.log("Reprovado")
-    break
+        break
 
     default:
         console.log("Inválido")
@@ -516,23 +516,23 @@ let num1 = 10
 let num2 = 5
 let operacao = "-"
 
-switch(operacao) {
+switch (operacao) {
 
-    case "+": 
+    case "+":
         console.log(num1 + num2)
-    break
+        break
 
-    case "-": 
+    case "-":
         console.log(num1 - num2)
-    break
+        break
 
-    case "*": 
+    case "*":
         console.log(num1 * num2)
-    break
+        break
 
-    case "/": 
+    case "/":
         console.log(num1 / num2)
-    break
+        break
 
     default:
         console.log("Inválido")
@@ -556,8 +556,8 @@ function contar2(valor) {
 
     let soma = 0
 
-    for(let i = 0; i < valor; i++) {
-        if(i % 2 === 0) {
+    for (let i = 0; i < valor; i++) {
+        if (i % 2 === 0) {
             soma++
         }
     }
@@ -571,9 +571,9 @@ console.log(contar2(20))
 
 function parImpar(num) {
 
-    if(num % 2 === 0) {
+    if (num % 2 === 0) {
         return `Par`
-    }else{
+    } else {
         return `Impar`
     }
 
@@ -584,7 +584,7 @@ console.log(parImpar(11))
 //
 
 function contador() {
-    for(let i = 1; i <= 15; i++) {
+    for (let i = 1; i <= 15; i++) {
         console.log(i)
     }
 }
@@ -594,11 +594,11 @@ contador()
 
 
 function posiNegativo(valor) {
-    if(valor > 0) {
+    if (valor > 0) {
         return `${valor} é positivo`
-    }else if(valor < 0) {
+    } else if (valor < 0) {
         return `${valor} é negativo`
-    }else if(valor === 0) {
+    } else if (valor === 0) {
         return `Valor 0`
     }
 }
@@ -609,9 +609,9 @@ console.log(posiNegativo(0))
 
 function maiorDeIdade(valor) {
 
-    if(valor >= 18) {
+    if (valor >= 18) {
         return `maior de idade`
-    }else {
+    } else {
         return `menor de idade`
     }
 }
@@ -621,11 +621,11 @@ console.log(maiorDeIdade(22))
 //
 
 function zeroADez(valor) {
-    if(valor >= 7) {
+    if (valor >= 7) {
         return `Aprovado`
-    }else if(valor >= 5) {
+    } else if (valor >= 5) {
         return `Recuperação`
-    }else {
+    } else {
         return `Reprovado`
     }
 }
@@ -635,9 +635,9 @@ console.log(zeroADez(8))
 //
 
 function divisivel(valor) {
-    if(valor % 3 === 0 || valor % 5 === 0) {
+    if (valor % 3 === 0 || valor % 5 === 0) {
         return `${valor} valor divisivél por 3 e 5`
-    }else {
+    } else {
         return `${valor} não é divisível por 3 e 5`
     }
 }
@@ -647,9 +647,9 @@ console.log(divisivel(3))
 
 function login(usuario, senha) {
 
-    if(usuario === "admin" && senha === "1234") {
+    if (usuario === "admin" && senha === "1234") {
         return `login correto`
-    }else {
+    } else {
         return `login ou senha incorreto`
     }
 }
@@ -661,7 +661,7 @@ console.log(login("admin", "1234"))
 
 function mostrar10() {
 
-    for(let i = 1; i <= 10; i++) {
+    for (let i = 1; i <= 10; i++) {
         console.log(i)
     }
 }
@@ -671,8 +671,8 @@ mostrar10()
 
 function paresAte20() {
 
-    for(let i = 1; i < 20; i++) {
-        if(i % 2 === 0) {
+    for (let i = 1; i < 20; i++) {
+        if (i % 2 === 0) {
             return i++
         }
     }
@@ -685,7 +685,7 @@ console.log(paresAte20())
 function calcularAte100(valor) {
 
     let soma = 0
-    for(let i = 0; i < valor; i++) {
+    for (let i = 0; i < valor; i++) {
         soma += i
     }
 
@@ -700,8 +700,8 @@ function vogais() {
     let contador = 0
     let vogais = "aeiou"
 
-    for(let i = 0; i < palavra.length; i++) {
-        if(vogais.includes(palavra[i])) {
+    for (let i = 0; i < palavra.length; i++) {
+        if (vogais.includes(palavra[i])) {
             contador++
         }
     }
@@ -710,3 +710,92 @@ function vogais() {
 }
 
 console.log(vogais())
+
+///
+
+for (let i = 1; i <= 10; i++) {
+    console.log(i)
+}
+
+//
+
+for (let i = 0; i <= 50; i++) {
+    if (i % 2 === 0) {
+        console.log(i)
+    }
+}
+
+//
+
+let somas = 0
+
+for (let i = 0; i < 100; i++) {
+    somas += i
+    
+}
+
+console.log(somas)
+
+//
+
+for (let i = 1; i <= 10; i++) {
+    console.log(`7 x ${i} = ${7 * i}`)
+}
+
+//
+
+let numero = [10, 5, 22, 8, 15];
+let maior = numero[0]
+
+for(let i = 1; i < numero.length; i++) {
+
+    if(numero[i] > maior) {
+        maior = numero[i]
+    }
+
+}
+
+console.log(maior)
+
+///
+
+let frutas = ["Maçã", "Banana", "Uva"];
+
+frutas.forEach((fruta) => {
+    console.log(fruta)
+})
+
+//
+
+let valores = [10, 20, 30, 40];
+let totais = 0
+
+valores.forEach((valor) => {
+    totais += valor
+})
+
+console.log(totais)
+
+//
+
+let numerosPar = [3, 6, 9, 12, 15, 18];
+
+numerosPar.forEach((pares) => {
+    if(pares % 2 === 0) {
+        console.log(pares)
+    }
+})
+
+//
+
+let precos = [100, 200, 300];
+let descontosArray = []
+
+precos.forEach((preco) => {
+    let desconto = preco * 0.10
+    let precoFinal = preco - desconto
+
+    descontosArray.push(precoFinal)
+})
+
+console.log(descontosArray)
