@@ -799,3 +799,187 @@ precos.forEach((preco) => {
 })
 
 console.log(descontosArray)
+
+////
+
+
+function parEImpar() {
+    let number = 8
+
+    if(number % 2 === 0) {
+        return `numero ${number} é par `
+    }else {
+        return `numero ${number} é impar `
+    }
+}
+
+console.log(parEImpar())
+
+///
+
+
+function maiorDeles() {
+    let maiorNumber = [2, 5, 7, 25]
+
+    let maior = maiorNumber[0]
+
+    for(let i = 1; i < maiorNumber.length; i++) {
+        if(maiorNumber[i] > maior) {
+            maior = maiorNumber[i]
+        }
+    }
+    return maior
+}
+
+console.log(maiorDeles())
+
+///
+
+function jogar(escolhaUsuario) {
+    const opcoes = ["pedra", "papel", "tesoura"]
+    const escolhaComputador = opcoes[Math.floor(Math.random() * 3)]
+
+    console.log("Usuario:", escolhaUsuario)
+    console.log("computador:", escolhaComputador)
+
+    if(escolhaUsuario === escolhaComputador) {
+        return "Empate!"
+    }
+
+    if(
+        (escolhaUsuario === "pedra" && escolhaComputador === "tesoura") ||
+        (escolhaUsuario === "tesoura" && escolhaComputador === "papel") ||
+        (escolhaUsuario === "papel" && escolhaComputador === "pedra") 
+    ) {
+        return "Você ganhou!"
+    }else {
+        return "Você perdeu!"
+    }  
+}
+
+console.log(jogar("pedra"))
+
+///
+
+function numeroAleatorio(min, max) {
+    let aleatorio = Math.floor(Math.random() * (max - min + 1)) + min
+
+    if(aleatorio > 50) {
+        return `numero ${aleatorio} é alto`
+    }else {
+        return `numero ${aleatorio} é baixo`
+    }
+}
+
+console.log(numeroAleatorio(1, 100))
+
+//
+
+function decimalMath(valor) {
+
+    let baixo = Math.floor(valor)
+    let cima = Math.ceil(valor)
+    let normal = Math.round(valor)
+
+    return {baixo, cima, normal}
+
+}
+console.log(decimalMath(1.5))
+
+///
+
+function maiorEMenor(valor) {
+
+    let maior = Math.max(...valor)
+    let menor = Math.min(...valor)
+    
+    return {maior, menor}
+}
+
+console.log(maiorEMenor([10, 5, 63, 88, 12, 2]))
+
+///
+
+function potencia(base, expoente) {
+
+    let numero = Math.pow(base, expoente)
+    return numero
+
+}
+
+console.log(potencia(2, 5))
+
+//
+
+function raizQuadrada(valor) {
+
+    if(valor < 0) {
+        return "Número inválido"
+    }
+    return Math.sqrt(valor)
+}
+
+console.log(raizQuadrada(16))
+
+///
+
+
+function simulandoDado(lados) {
+    return Math.floor(Math.random() * lados) +1
+}
+console.log(simulandoDado(6))
+
+///
+
+function sortearNome() {
+
+    let pessoas = ["ana", "vinicius", "maria", "valdir"]
+
+    return pessoas[Math.floor(Math.random() * pessoas.length)]
+
+}
+
+console.log(sortearNome())
+
+///
+
+function parAleatorio() {
+    const numero = Math.floor(Math.random() * 100) +1
+    return numero % 2 === 0 ? numero: numero + 1
+}
+
+console.log(parAleatorio())
+
+///
+
+function gerarSenha() {
+    
+
+    let senha = Math.floor(Math.random() * 900000) +100000
+
+    return senha
+}
+
+console.log(gerarSenha())
+
+///
+
+function calcularMedia() {
+    let notas = [7.5, 8, 2.6, 7.6, 8.3]
+    let media = 0
+
+    for(let i = 0; i < notas.length; i++) {
+        media += notas[i]
+    }
+
+    let mediaTotal =  Math.round(media / notas.length)
+
+    if(mediaTotal >=7) {
+        return ` ${mediaTotal} = aprovado`
+    }else {
+        return ` ${mediaTotal} = reprovado`
+    }
+
+}
+
+console.log(calcularMedia())
