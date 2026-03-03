@@ -983,3 +983,6 @@ function calcularMedia() {
 }
 
 console.log(calcularMedia())
+
+///
+
