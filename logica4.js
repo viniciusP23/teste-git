@@ -293,3 +293,93 @@ console.log(maisBarato)
 console.log(somatotal)
 console.log(acimaDe100)
 console.log(acimaDe2K)
+
+///
+
+const pedidosLoja = [
+  { id: 1, valor: 250 },
+  { id: 2, valor: 80 },
+  { id: 3, valor: 120 },
+  { id: 4, valor: 500 },
+  { id: 5, valor: 60 }
+]
+
+
+let valorTotal= 0
+let maiorPedido = pedidosLoja[0]
+let menorPedido = pedidosLoja[0]
+let maioresQue100 = 0
+let maioresQue400 = false
+
+for(let i = 0; i < pedidosLoja.length; i++) {
+
+    const pedidos = pedidosLoja[i]
+
+    valorTotal += pedidos.valor
+
+    if(pedidos.valor > maiorPedido.valor) {
+        maiorPedido = pedidos
+    }
+
+    if(pedidos.valor < menorPedido.valor) {
+        menorPedido = pedidos
+    }
+
+    if(pedidos.valor > 100) {
+        maioresQue100++
+    }
+
+    if(pedidos.valor > 400) {
+        maioresQue400 = true
+    }
+
+}
+
+console.log(valorTotal)
+console.log(maiorPedido)
+console.log(menorPedido)
+console.log(maioresQue100)
+console.log(maioresQue400)
+
+///
+
+
+const acharNumeros = [5, 12, 8, 20, 3, 15]
+
+let maior = -Infinity
+let segundoMaior = -Infinity
+
+let menor = Infinity
+let segundoMenor = Infinity
+
+for(let i = 0; i < acharNumeros.length; i++) {
+
+    
+    const num = acharNumeros[i]
+
+    if (num > maior) {
+        segundoMaior = maior
+        maior = num
+    } 
+    else if (num > segundoMaior) {
+        segundoMaior = num
+    }
+
+    if (num < menor) {
+        segundoMenor = menor
+        menor = num
+    } 
+    else if (num < segundoMenor) {
+        segundoMenor = num
+    }
+
+
+}
+
+console.log(maior)
+console.log(segundoMaior)
+console.log(menor)
+console.log(segundoMenor)
+
+
+
