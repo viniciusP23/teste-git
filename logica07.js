@@ -281,8 +281,9 @@ let numFrequente = null
 
 for(let num in contagem02) {
 
-    if(num > maior) {
-        numFrequente = maior
+    if(contagem02[num] > maior01) {
+        maior01 = contagem02[num]
+        numFrequente = num
     }
 }
 
@@ -348,3 +349,216 @@ for(let num in contagem05) {
         console.log(num)
     }
 }
+
+// 
+
+const numeros = [1, 2, 2, 3, 3, 3, 4]
+
+let contagem06  = {}
+
+for(let i = 0; i < numeros.length; i++) {
+
+    const num = numeros[i]
+
+    if(contagem06[num]) {
+        contagem06[num] += 1
+    }else {
+        contagem06[num] = 1
+    }
+}
+
+console.log(contagem06)
+
+// 
+
+const frutas = ["maçã", "banana", "maçã", "laranja", "banana", "maçã"]
+
+let contagem07 = {}
+
+for(let i = 0; i < frutas.length; i++) {
+
+    const num = frutas[i]
+
+    if(contagem07[num]) {
+        contagem07[num] += 1
+    }else {
+        contagem07[num] = 1
+    }
+}
+
+console.log(contagem07)
+
+// 
+
+const numeros02 = [5, 2, 5, 3, 5, 2, 3, 3]
+
+let contagem08 = {}
+
+for(let num of numeros02) {
+
+    if(contagem08[num]) {
+        contagem08[num] += 1
+    }else {
+        contagem08[num] = 1  
+    }
+}
+
+let maior2 = 0
+let frequente = null
+
+for(let num in contagem08) {
+
+   if(contagem08[num] > maior2) {
+        maior2 = contagem08[num]
+        frequente = num
+   }
+}
+
+console.log(frequente)
+
+// 
+
+const palavras01 = ["js", "react", "js", "node", "react", "js"]
+
+let contagem09 = {} 
+
+for(let num of palavras01) {
+
+    if(contagem09[num]) {
+        contagem09[num] += 1
+    }else {
+        contagem09[num] = 1
+    }
+}
+
+let mais = 0
+let frequente02 = null
+
+for(let num in contagem09) {
+
+    if(contagem09[num] > mais) {
+        mais = contagem09[num]
+        frequente02 = num
+    }
+}
+
+console.log(frequente02)
+
+// 
+
+const numeros03 = [1,2,2,3,4,4,5]
+
+let contagem10 = {}
+
+for(let num of numeros03) {
+
+    if(contagem10[num]) {
+        contagem10[num] += 1
+    }else {
+        contagem10[num] = 1 
+    }
+}
+
+for(let num in contagem10) {
+
+    if(contagem10[num] > 1) {
+        console.log(num)
+    }
+}
+
+// 
+
+const numeros04 = [1,1,2,2,3,4,4,5]
+
+let contagem11 = {}
+
+for(let num of numeros04) {
+
+    if(contagem11[num]) {
+        contagem11[num] += 1
+    }else {
+        contagem11[num] = 1 
+    }
+}
+
+let resultados = []
+
+for(let num in contagem11) {
+
+    if(contagem11[num] > 0) {
+        resultados.push(Number(num))
+    }
+}
+
+console.log(resultados)
+
+// 
+
+const numeros05 = [1,2,2,3,3,3,4]
+
+let contagem12 = {}
+
+for(let num of numeros05) {
+
+    if(contagem12[num]) {
+        contagem12[num] += 1
+    }else {
+        contagem12[num] = 1
+    }
+}
+
+let resultados01 = {}
+
+for(let num in contagem12) {
+
+    const freq = contagem12[num]
+
+    if(!resultados01[freq]) {
+        resultados01[freq] = []
+    }
+
+    resultados01[freq].push(Number(num))
+}
+
+console.log(resultados01)
+
+// 
+
+const numeros06 = [1,1,1,2,2,3]
+
+let contagem13 = {}
+
+for(let num of numeros06) {
+
+    if(contagem13[num]) {
+        contagem13[num] += 1
+    }else {
+        contagem13[num] = 1
+    }
+}
+
+let primeiro = 0
+let segundo = 0
+
+let numPrimeiro = null
+let numSegundo = null
+
+
+for(let num in contagem13) {
+
+    let freq = contagem13[num]
+
+    if(freq > primeiro) {
+        segundo = primeiro
+        numPrimeiro = numSegundo
+
+        primeiro = freq
+        numPrimeiro = num
+    }else if(freq > segundo) {
+        segundo = freq
+        numSegundo = num
+    }
+}
+
+console.log(numSegundo)
+
