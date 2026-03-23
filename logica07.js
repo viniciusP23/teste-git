@@ -562,3 +562,75 @@ for(let num in contagem13) {
 
 console.log(numSegundo)
 
+// 
+
+for(let i = 0; i < 10; i++) {
+
+    console.log(i)
+}
+
+// 
+
+for(let i = 10; i > 0; i--) {
+
+    console.log(i)
+}
+
+// 
+
+const numeros01 = [1, 2, 3, 4, 5]
+let somar = 0
+
+for(let i = 0;  i < numeros01.length; i++) {
+
+    somar += numeros01[i]
+
+}
+
+console.log(somar)
+
+// 
+
+const tabuada = 5
+
+for(let i = 0; i < 10; i++) {
+    console.log(`${tabuada} X ${i} = ${tabuada * i}`)
+}
+
+// 
+
+const frutas01 = ["maçã", "banana", "maçã", "laranja", "banana", "maçã"]
+
+let contagem14 = {}
+
+for(let num of frutas01) {
+
+    if(contagem14[num]) {
+        contagem14[num] += 1
+    }else {
+        contagem14[num] = 1
+    }
+}
+
+console.log(contagem14)
+
+// 
+
+
+const nums = [10, 5, 8, 20, 3]
+
+let maiorNum = null
+
+for(let i = 0; i < nums.length; i++) {
+
+    const num = nums[i]
+
+    if(num > maiorNum)  {
+        maiorNum = num
+    }
+}
+
+console.log(maiorNum)
+
+// 
+
