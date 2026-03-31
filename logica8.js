@@ -179,3 +179,136 @@ adicionarProduto({ id: 3, nome: "mouse-pad", preco: 50 })
 adicionarProduto({ id: 2, nome: "mouse", preco: 150 })
 
 console.log(carrinho02)
+
+// 
+
+for(let i = 0; i < 10; i++) {
+    console.log(i)
+}
+
+// 
+
+for(let i = 0; i < 20; i++) {
+
+    if(i % 2 === 0) {
+        console.log(i)
+    }
+}
+
+// 
+
+let somas = 0
+
+for(let i = 0; i <= 100; i++) {
+
+    somas += i
+}
+
+console.log(somas)
+
+// 
+
+let number = 7
+
+for(let i = 0; i <= 10; i++) {
+
+    console.log(` ${number} X ${i} = ${number * i}`)
+
+}
+
+// 
+
+for(let i = 10; i >= 0; i--) {
+    console.log(i)
+}
+
+// 
+
+let numeros01 = [10, 20, 30, 40]
+let somarValores = 0
+let maiorNumero = numeros01[0]
+
+for(let i = 0; i < numeros01.length; i++) {
+
+    const num = numeros01[i]
+
+    somarValores += num
+
+    if(num > maiorNumero) {
+        maiorNumero = num
+    }
+
+}
+console.log(numeros01)
+console.log(somarValores)
+console.log(maiorNumero)
+
+// 
+
+const numeros02 = [1, 2, 3, 4, 5, 6]
+let numPar = 0
+
+for(let i = 0; i < numeros02.length; i++) {
+
+    const num = numeros02[i]
+
+    if(num % 2 === 0) {
+        numPar++
+    }
+}
+
+console.log(numPar)
+
+// 
+
+const number03 = [5, 12, 8, 20, 3]
+
+const maioresQue10 = number03.filter(n => n > 10)
+console.log(maioresQue10)
+
+// 
+
+const number04 = [1, 2, 2, 3, 3, 3]
+
+let contagem1 = {}
+
+for(let num of number04) {
+
+    if(contagem1[num]) {
+        contagem1[num] += 1
+    }else {
+        contagem1[num] = 1
+    }
+}
+console.log(contagem1)
+
+// 
+
+const palavras1 = "banana"
+let contagem2 = {}
+
+for(let palavra of palavras1) {
+
+    if(contagem2[palavra]) {
+        contagem2[palavra] += 1
+    }else {
+        contagem2[palavra] = 1
+    }
+}
+console.log(contagem2)
+
+// 
+
+let repitidas = "eu gosto de programar e gosto de aprender"
+let contagem3 = {}
+let palavras2 = repitidas.split(" ")
+
+for(let palavra of palavras2) {
+
+    if(contagem3[palavra]) {
+        contagem3[palavra] += 1
+    }else {
+        contagem3[palavra] = 1
+    }
+}
+console.log(contagem3)
