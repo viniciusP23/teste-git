@@ -312,3 +312,80 @@ for(let palavra of palavras2) {
     }
 }
 console.log(contagem3)
+
+// 
+
+const number05 = [1, 2, 3, 4]
+let invertidos = []
+
+for(let i = number05.length - 1; i >= 0; i--) {
+    invertidos.push([i])
+}
+console.log(invertidos)
+
+// 
+
+const duplicados = [1, 2, 2, 3, 4, 4]
+let resultado = []
+
+for(let num of duplicados) {
+    if(!resultado.includes(num)) {
+        resultado.push(num)
+    }
+}
+
+console.log(resultado)
+
+// 
+
+const number06 = [10, 5, 8, 2]
+let menorNumero = number06[0]
+
+for(let i = 0; i < number06.length; i++) {
+
+    const num = number06[i]
+    if(num < menorNumero) {
+        menorNumero = num
+    }
+}
+
+console.log(menorNumero)
+
+// 
+
+const number07 = [1, 2, 3, 4, 5, 6]
+let somarPares = 0
+
+for(let i = 0; i < number07.length; i++) {
+
+    const num = number07[i]
+
+    if(num % 2 === 0) {
+        somarPares += num
+    }
+}
+
+console.log(somarPares)
+
+// 
+
+const number08 = [1, 2, 2, 3, 2] 
+let contador = 0
+let alvo = 2
+
+for(let num of number08) {
+    if(num === alvo) {
+        contador++
+    }
+}
+console.log(contador)
+
+// 
+
+const number09 = [1, 2]
+const number10 = [3, 4]
+
+let juntar = []
+
+juntar.push([...number09, ...number10])
+console.log(juntar)
