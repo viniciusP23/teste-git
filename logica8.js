@@ -163,9 +163,9 @@ function adicionarProduto(produto) {
 
     const produtoExistente = carrinho02.find(p => p.id === produto.id)
 
-    if(produtoExistente) {
+    if (produtoExistente) {
         produtoExistente.quantidade += 1
-    }else {
+    } else {
         carrinho02.push({
             ...produto,
             quantidade: 1
@@ -182,15 +182,15 @@ console.log(carrinho02)
 
 // 
 
-for(let i = 0; i < 10; i++) {
+for (let i = 0; i < 10; i++) {
     console.log(i)
 }
 
 // 
 
-for(let i = 0; i < 20; i++) {
+for (let i = 0; i < 20; i++) {
 
-    if(i % 2 === 0) {
+    if (i % 2 === 0) {
         console.log(i)
     }
 }
@@ -199,7 +199,7 @@ for(let i = 0; i < 20; i++) {
 
 let somas = 0
 
-for(let i = 0; i <= 100; i++) {
+for (let i = 0; i <= 100; i++) {
 
     somas += i
 }
@@ -210,7 +210,7 @@ console.log(somas)
 
 let number = 7
 
-for(let i = 0; i <= 10; i++) {
+for (let i = 0; i <= 10; i++) {
 
     console.log(` ${number} X ${i} = ${number * i}`)
 
@@ -218,7 +218,7 @@ for(let i = 0; i <= 10; i++) {
 
 // 
 
-for(let i = 10; i >= 0; i--) {
+for (let i = 10; i >= 0; i--) {
     console.log(i)
 }
 
@@ -228,13 +228,13 @@ let numeros01 = [10, 20, 30, 40]
 let somarValores = 0
 let maiorNumero = numeros01[0]
 
-for(let i = 0; i < numeros01.length; i++) {
+for (let i = 0; i < numeros01.length; i++) {
 
     const num = numeros01[i]
 
     somarValores += num
 
-    if(num > maiorNumero) {
+    if (num > maiorNumero) {
         maiorNumero = num
     }
 
@@ -248,11 +248,11 @@ console.log(maiorNumero)
 const numeros02 = [1, 2, 3, 4, 5, 6]
 let numPar = 0
 
-for(let i = 0; i < numeros02.length; i++) {
+for (let i = 0; i < numeros02.length; i++) {
 
     const num = numeros02[i]
 
-    if(num % 2 === 0) {
+    if (num % 2 === 0) {
         numPar++
     }
 }
@@ -272,11 +272,11 @@ const number04 = [1, 2, 2, 3, 3, 3]
 
 let contagem1 = {}
 
-for(let num of number04) {
+for (let num of number04) {
 
-    if(contagem1[num]) {
+    if (contagem1[num]) {
         contagem1[num] += 1
-    }else {
+    } else {
         contagem1[num] = 1
     }
 }
@@ -287,11 +287,11 @@ console.log(contagem1)
 const palavras1 = "banana"
 let contagem2 = {}
 
-for(let palavra of palavras1) {
+for (let palavra of palavras1) {
 
-    if(contagem2[palavra]) {
+    if (contagem2[palavra]) {
         contagem2[palavra] += 1
-    }else {
+    } else {
         contagem2[palavra] = 1
     }
 }
@@ -299,15 +299,15 @@ console.log(contagem2)
 
 // 
 
-let repitidas = "eu gosto de programar e gosto de aprender"
+let repetidas0 = "eu gosto de programar e gosto de aprender"
 let contagem3 = {}
-let palavras2 = repitidas.split(" ")
+let palavras2 = repetidas0.split(" ")
 
-for(let palavra of palavras2) {
+for (let palavra of palavras2) {
 
-    if(contagem3[palavra]) {
+    if (contagem3[palavra]) {
         contagem3[palavra] += 1
-    }else {
+    } else {
         contagem3[palavra] = 1
     }
 }
@@ -318,7 +318,7 @@ console.log(contagem3)
 const number05 = [1, 2, 3, 4]
 let invertidos = []
 
-for(let i = number05.length - 1; i >= 0; i--) {
+for (let i = number05.length - 1; i >= 0; i--) {
     invertidos.push([i])
 }
 console.log(invertidos)
@@ -328,8 +328,8 @@ console.log(invertidos)
 const duplicados = [1, 2, 2, 3, 4, 4]
 let resultado = []
 
-for(let num of duplicados) {
-    if(!resultado.includes(num)) {
+for (let num of duplicados) {
+    if (!resultado.includes(num)) {
         resultado.push(num)
     }
 }
@@ -341,10 +341,10 @@ console.log(resultado)
 const number06 = [10, 5, 8, 2]
 let menorNumero = number06[0]
 
-for(let i = 0; i < number06.length; i++) {
+for (let i = 0; i < number06.length; i++) {
 
     const num = number06[i]
-    if(num < menorNumero) {
+    if (num < menorNumero) {
         menorNumero = num
     }
 }
@@ -356,11 +356,11 @@ console.log(menorNumero)
 const number07 = [1, 2, 3, 4, 5, 6]
 let somarPares = 0
 
-for(let i = 0; i < number07.length; i++) {
+for (let i = 0; i < number07.length; i++) {
 
     const num = number07[i]
 
-    if(num % 2 === 0) {
+    if (num % 2 === 0) {
         somarPares += num
     }
 }
@@ -369,12 +369,12 @@ console.log(somarPares)
 
 // 
 
-const number08 = [1, 2, 2, 3, 2] 
+const number08 = [1, 2, 2, 3, 2]
 let contador = 0
 let alvo = 2
 
-for(let num of number08) {
-    if(num === alvo) {
+for (let num of number08) {
+    if (num === alvo) {
         contador++
     }
 }
@@ -389,3 +389,162 @@ let juntar = []
 
 juntar.push([...number09, ...number10])
 console.log(juntar)
+
+// 
+
+const number11 = [3, 7, 9, 14, 12, 5]
+let primeiroMaior = null
+
+for (let i = 0; i < number11.length; i++) {
+
+    const num = number11[i]
+
+    if (num > 10) {
+        primeiroMaior = num
+        break
+    }
+}
+
+console.log(primeiroMaior)
+
+// 
+
+const number12 = [3, 7, 9, 12, 15]
+let somar01 = 0
+
+for (let i = 0; i < number12.length; i++) {
+
+    const num = number12[i]
+
+    if (num > 10) {
+        somar01 += num
+    }
+}
+
+console.log(somar01)
+
+// 
+
+const number13 = [3, 7, 9, 12, 15, 8]
+
+let guardarMaiores = []
+
+for (let i = 0; i < number13.length; i++) {
+
+    const num = number13[i]
+
+    if (num > 10) {
+        guardarMaiores.push(num)
+    }
+}
+
+console.log(guardarMaiores)
+
+// 
+
+const number14 = [3, 7, 9, 12, 15, 8]
+let maioresArray = []
+let soma02 = 0
+
+for (let num of number14) {
+
+    if (num > 10) {
+        maioresArray.push(num)
+        soma02 += num
+    }
+}
+
+console.log({
+    maiores: maioresArray,
+    soma: soma02
+})
+
+// 
+
+const number15 = [1, 2, 2, 3]
+
+let resultado1 = []
+
+for (let num of number15) {
+
+    if (!resultado1.includes(num)) {
+        resultado1.push(num)
+    }
+}
+
+console.log(resultado1)
+
+// 
+
+const numeros03 = [1, 1, 2, 3, 3, 4]
+
+let resultado2 = []
+
+for (let num of numeros03) {
+
+    if (!resultado2.includes(num)) {
+        resultado2.push(num)
+    }
+}
+
+console.log(resultado2)
+
+// 
+
+const numeros04 = [5, 12, 8, 20, 12, 3]
+
+let resultado3 = []
+
+for (let num of numeros04) {
+
+    if (num > 10) {
+
+        if (!resultado3.includes(num)) {
+            resultado3.push(num)
+        }
+    }
+}
+
+console.log(resultado3)
+
+// 
+
+const numeros05 = [1, 2, 3, 2, 4, 3, 5]
+
+let repetidas = []
+let vistos = []
+
+for (let num of numeros05) {
+
+    if (vistos.includes(num)) {
+
+        if (!repetidas.includes(num)) {
+            repetidas.push(num)
+        }
+    } else {
+        vistos.push(num)
+    }
+}
+
+console.log(repetidas)
+
+// 
+
+const numeros06 = [5, 1, 5, 2, 2, 3, 3, 3]
+
+let repetidas2 = []
+let visto = []
+
+for (let num of numeros06) {
+
+    if (visto.includes(num)) {
+
+        if (!repetidas2.includes(num)) {
+            repetidas2.push(num)
+        }
+    } else {
+        visto.push(num)
+    }
+}
+
+console.log(repetidas2)
