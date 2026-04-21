@@ -265,3 +265,8 @@ function diminuir(nome) {
 
 adicionarProduto01("Camiseta")
 adicionarProduto01("Camiseta")
+adicionarProduto01("Boné")
+
+
+// 
+
