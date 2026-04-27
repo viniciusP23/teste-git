@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semáforo</title>
+</head>
+
+<style>
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    main {
+        display: flex;
+        height: 100vh;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 5vh;
+    }
+
+    .button {
+        width: 80px
+    }
+
+</style>
+
+<body style="background-color: rgb(9, 110, 110);">
+
+    <main>
+        <div>
+            <img id="img" src="img/desligado.png">
+        </div>
+
+        <div class="buttons">
+            <button id="red" class="button">Vermelho</button>
+            <button id="yellow" class="button">Amarelo</button>
+            <button id="green" class="button">Verde</button>
+            <button id="automatic" class="button">Automático</button>
+        </div>
+    </main>
+
+</body>
+<script src="script.js"></script>
+
+</html>

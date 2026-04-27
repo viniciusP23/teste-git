@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h3>Ex 1</h3>
+
+    <h1 id="contador">0</h1>
+    <button id="mais"> + </button>
+    <button id="menos"> - </button>
+    <button id="reset">reset</button>
+
+    <h3>Ex 2</h3>
+    
+    <input id="par-impar" type="number">
+    <button id="verificar">verificar</button>
+    <p id="resultado"></p>
+
+    <h3>Ex 3</h3>
+
+    <input id="atual-1" type="number">
+    <input id="atual-2" type="number">
+    <p id="resultado2"></p>
+    <button id="comparar">comparar</button>
+
+
+
+</body>
+
+<script>
+
+////// EX 1
+
+const contador = document.getElementById("contador")
+const btnMais = document.getElementById("mais")
+const btnMenos = document.getElementById("menos")
+const reset = document.getElementById("reset")
+
+
+let atual = Number(contador.innerHTML)
+
+btnMais.addEventListener("click", () => {
+    
+    atual += 1
+
+    contador.innerHTML = atual
+});
+
+btnMenos.addEventListener("click", () => {
+
+    atual -= 1
+
+    if(atual < 0 ) {
+        return 0
+    }
+
+    contador.innerHTML = atual 
+})
+
+reset.addEventListener("click", () => {
+
+    contador.innerHTML = 0
+
+})
+
+
+////// EX 2
+
+const parImpar = document.getElementById("par-impar")
+const verificar = document.getElementById("verificar")
+const resultado = document.getElementById("resultado")
+
+verificar.addEventListener("click", () => {
+
+    let numero = Number(parImpar.value)
+
+    if(numero % 2 === 0) {
+        resultado.innerHTML = ` o número ${numero} é par`
+    }else {
+        resultado.innerHTML = ` o número ${numero} é impar`
+    }
+
+})
+
+
+////// EX 3
+
+const atual1 = document.getElementById("atual-1")
+const atual2 = document.getElementById("atual-2")
+const comparar = document.getElementById("comparar")
+const resultado2 = document.getElementById("resultado2")
+
+comparar.addEventListener("click", () => {
+
+    let numero1 = Number(atual1.value)
+    let numero2 = Number(atual2.value)
+
+    if(numero1 > numero2) {
+        resultado2.innerHTML = `numero ${numero1} é maior`
+    }else if(numero2 > numero1) {
+        resultado2.innerHTML = `numero ${numero2} é maior`
+    }else {
+        resultado2.innerHTML = "São iguais"
+    }
+
+})
+
+</script>
+</html>
