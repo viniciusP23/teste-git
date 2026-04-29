@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,7 +17,7 @@
     <button id="reset">reset</button>
 
     <h3>Ex 2</h3>
-    
+
     <input id="par-impar" type="number">
     <button id="verificar">verificar</button>
     <p id="resultado"></p>
@@ -28,87 +29,160 @@
     <p id="resultado2"></p>
     <button id="comparar">comparar</button>
 
+    <h3>Ex 4</h3>
 
+    <input id="input-list" type="text">
+    <button id="add-list">adiconar</button>
+    <ul id="list"></ul>
+
+    <h3>Ex 5</h3>
+
+    <input id="to-do-input" type="text">
+    <button id="btn-to-do">adiconar</button>
+    <ul id="list-to-do"></ul>
 
 </body>
 
 <script>
 
-////// EX 1
+    ////// EX 1
 
-const contador = document.getElementById("contador")
-const btnMais = document.getElementById("mais")
-const btnMenos = document.getElementById("menos")
-const reset = document.getElementById("reset")
-
-
-let atual = Number(contador.innerHTML)
-
-btnMais.addEventListener("click", () => {
-    
-    atual += 1
-
-    contador.innerHTML = atual
-});
-
-btnMenos.addEventListener("click", () => {
-
-    atual -= 1
-
-    if(atual < 0 ) {
-        return 0
-    }
-
-    contador.innerHTML = atual 
-})
-
-reset.addEventListener("click", () => {
-
-    contador.innerHTML = 0
-
-})
+    const contador = document.getElementById("contador")
+    const btnMais = document.getElementById("mais")
+    const btnMenos = document.getElementById("menos")
+    const reset = document.getElementById("reset")
 
 
-////// EX 2
+    let atual = Number(contador.innerHTML)
 
-const parImpar = document.getElementById("par-impar")
-const verificar = document.getElementById("verificar")
-const resultado = document.getElementById("resultado")
+    btnMais.addEventListener("click", () => {
 
-verificar.addEventListener("click", () => {
+        atual += 1
 
-    let numero = Number(parImpar.value)
+        contador.innerHTML = atual
+    });
 
-    if(numero % 2 === 0) {
-        resultado.innerHTML = ` o número ${numero} é par`
-    }else {
-        resultado.innerHTML = ` o número ${numero} é impar`
-    }
+    btnMenos.addEventListener("click", () => {
 
-})
+        atual -= 1
+
+        if (atual < 0) {
+            return 0
+        }
+
+        contador.innerHTML = atual
+    })
+
+    reset.addEventListener("click", () => {
+
+        contador.innerHTML = 0
+
+    })
 
 
-////// EX 3
+    ////// EX 2
 
-const atual1 = document.getElementById("atual-1")
-const atual2 = document.getElementById("atual-2")
-const comparar = document.getElementById("comparar")
-const resultado2 = document.getElementById("resultado2")
+    const parImpar = document.getElementById("par-impar")
+    const verificar = document.getElementById("verificar")
+    const resultado = document.getElementById("resultado")
 
-comparar.addEventListener("click", () => {
+    verificar.addEventListener("click", () => {
 
-    let numero1 = Number(atual1.value)
-    let numero2 = Number(atual2.value)
+        let numero = Number(parImpar.value)
 
-    if(numero1 > numero2) {
-        resultado2.innerHTML = `numero ${numero1} é maior`
-    }else if(numero2 > numero1) {
-        resultado2.innerHTML = `numero ${numero2} é maior`
-    }else {
-        resultado2.innerHTML = "São iguais"
-    }
+        if (numero % 2 === 0) {
+            resultado.innerHTML = ` o número ${numero} é par`
+        } else {
+            resultado.innerHTML = ` o número ${numero} é impar`
+        }
 
-})
+    })
+
+
+    ////// EX 3
+
+    const atual1 = document.getElementById("atual-1")
+    const atual2 = document.getElementById("atual-2")
+    const comparar = document.getElementById("comparar")
+    const resultado2 = document.getElementById("resultado2")
+
+    comparar.addEventListener("click", () => {
+
+        let numero1 = Number(atual1.value)
+        let numero2 = Number(atual2.value)
+
+        if (numero1 > numero2) {
+            resultado2.innerHTML = `numero ${numero1} é maior`
+        } else if (numero2 > numero1) {
+            resultado2.innerHTML = `numero ${numero2} é maior`
+        } else {
+            resultado2.innerHTML = "São iguais"
+        }
+
+    })
+
+    /////// EX 4
+
+
+    const btnAdicionar = document.getElementById("add-list")
+    const lista = document.getElementById("list")
+
+    btnAdicionar.addEventListener("click", () => {
+
+        const inputList = document.getElementById("input-list").value
+
+        const li = document.createElement("li")
+
+        const excluir = document.createElement("button")
+        excluir.innerHTML = "X"
+
+        li.innerHTML = `${inputList}`
+
+        lista.appendChild(li)
+        li.appendChild(excluir)
+
+        excluir.addEventListener("click", () => {
+            li.remove()
+        })
+    })
+
+
+
+    /////// EX 5
+
+
+    const btnToDo = document.getElementById("btn-to-do")
+    const listToDo = document.getElementById("list-to-do")
+
+    btnToDo.addEventListener("click", () => {
+
+        const inputToDo = document.getElementById("to-do-input").value
+
+        const li = document.createElement("li")
+
+        li.innerHTML = inputToDo
+
+        if(inputToDo.trim() === "") return 
+
+        const check = document.createElement("button")
+        check.innerHTML = "✅"
+
+        const remover = document.createElement("button")
+        remover.innerHTML = "❌"
+
+        remover.addEventListener("click", () => {
+            li.remove()
+        })
+
+        check.addEventListener("click", () => {
+            li.style.textDecoration = "line-through"
+        })
+        
+        li.appendChild(check)
+        li.appendChild(remover)
+        listToDo.appendChild(li)
+    })
 
 </script>
+
 </html>
