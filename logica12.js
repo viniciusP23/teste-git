@@ -119,5 +119,48 @@ contarVogais("vinicius")
 
 // 
 
+function parImpar(number) {
+
+    if(number % 2 === 0) {
+        console.log(`${number} é PAR`)
+    }else {
+        console.log(`${number} é IMPAR`)
+    }
+}
+
+parImpar(13)
+
+// 
 
 
+const tabuada = 9
+
+for(let i = 0; i < 10; i++) {
+
+    console.log(` ${1} X ${tabuada} = ${tabuada * i}`)
+
+}
+
+// 
+
+const arrayDenumeros = [1, 7, 10, 70, 5,]
+
+let maior = arrayDenumeros[0]
+let menor = arrayDenumeros[0]
+
+for(let i = 0; i < arrayDenumeros.length; i++) {
+
+
+    const num = arrayDenumeros[i]
+
+    if(num > maior) {
+        maior = num
+    }
+
+    if(num < menor) {
+        menor = num
+    }
+}
+
+console.log(maior)
+console.log(menor)
