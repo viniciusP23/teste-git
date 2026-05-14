@@ -164,3 +164,134 @@ for(let i = 0; i < arrayDenumeros.length; i++) {
 
 console.log(maior)
 console.log(menor)
+
+// 
+
+const valores = [10, 20, 30]
+
+let somarValor = 0
+
+for(let i = 0; i < valores.length; i++) {
+
+    const num = valores[i]
+
+    somarValor += num
+}
+
+console.log(somarValor)
+
+// 
+
+const duplicados = [1, 2, 2, 3, 4, 4, 5]
+
+// let resultado = {}
+
+// for(let valor of duplicados) {
+
+//     if(resultado[valor]) {
+//         resultado[valor] += 1
+//     }else {
+//         resultado[valor] = 1
+//     }
+// }
+
+// let removidos = []
+// for(let chave in resultado) {
+
+//     removidos.push(chave)
+// }
+
+// console.log(removidos)
+
+let removidos = []
+
+for(let chave of duplicados) {
+
+    if(!removidos.includes(chave)) {
+        removidos.push(chave)
+    }
+}
+
+console.log(removidos)
+
+// 
+
+const palavras = "vinicius"
+
+let contarLetras = {}
+
+for(let letras of palavras) {
+
+    if(contarLetras[letras]) {
+        (contarLetras[letras]) += 1
+    }else {
+        (contarLetras[letras]) = 1
+    }
+}
+
+console.log(contarLetras)
+
+// 
+
+for(let i = 0; i <= 30; i++) {
+
+    if(i % 3 === 0 && i % 5 === 0) {
+        console.log("FizzBuzz")
+    }
+    
+    else if(i % 3 === 0) {
+        console.log("Fizz")
+    }
+
+    else if(i % 5 === 0) {
+        console.log("Buzz")
+    }
+     
+    else {
+        console.log(i)
+    }
+}
+
+// 
+
+const acharSegundo = [10, 5, 18, 25, 15]
+
+let primeiro = -Infinity
+let segundo = -Infinity
+
+for(let i = 0; i < acharSegundo.length; i++) {
+
+    const num = acharSegundo[i]
+
+    if(num > primeiro) {
+        segundo = primeiro
+        primeiro = num
+
+    }else if(num > segundo && num < primeiro){
+        segundo = num
+    }
+}
+
+console.log("maior:", primeiro)
+console.log("segundo maior:",segundo)
+
+// 
+
+const numbers = [10, 11, 56, 33, 77, 80, 100]
+
+let numImpar = []
+let numPar = []
+
+for(let i = 0; i < numbers.length; i++) {
+
+    const num = numbers[i]
+
+    if(num % 2 === 0) {
+        numPar.push(num)
+    }else {
+        numImpar.push(num)
+    }
+}
+
+console.log("pares:", numImpar)
+console.log("impares", numPar)
