@@ -295,3 +295,105 @@ for(let i = 0; i < numbers.length; i++) {
 
 console.log("pares:", numImpar)
 console.log("impares", numPar)
+
+// 
+
+class Pessoa {
+    constructor(nome, idade) {
+        this.nome = nome
+        this.idade = idade
+    }
+
+    apresentar() {
+        console.log(`Olá meu nome é ${this.nome} e tenho ${this.idade} de idade`)
+    }
+}
+
+const p1 = new Pessoa("vinicius", 25)
+p1.apresentar()
+
+// 
+
+class Banco {
+    constructor(titular, saldo) {
+        this.titular = titular
+        this.saldo = saldo
+    }
+
+    depositar(valor) {
+
+        this.saldo += valor
+    }
+
+    sacar(valor) {
+
+        if(valor > this.saldo) {
+            console.log("Valor insuficiente")
+            return 
+        }
+
+        this.saldo -= valor
+        
+    }
+
+    verSaldo() {
+        console.log(this.saldo)
+    }
+}
+
+const conta = new Banco("vinicius", 1000)
+conta.depositar(500)
+conta.sacar(200)
+conta.verSaldo()
+
+// 
+
+class Produtos {
+    constructor(nome, preco, quantidade) {
+        this.nome = nome
+        this.preco = preco
+        this.quantidade = quantidade
+    }
+
+    calcularTotal() {
+
+        return this.preco * this.quantidade
+    }
+}
+
+const pt1 = new Produtos("banana", 5, 2)
+console.log(pt1.calcularTotal())
+
+// 
+
+class Carro {
+    constructor(marca, modelo) {
+        this.marca = marca
+        this.modelo = modelo
+        this.velocidade = 0
+    }
+
+    acelerar() {
+        this.velocidade += 10
+    }
+
+    frear() {
+        this.velocidade -= 10
+
+        if(this.velocidade < 0) {
+            this.velocidade = 0
+        }
+    }
+
+    mostrarVelocidade() {
+        console.log(`Velocidade atual: ${this.velocidade}`)
+    }
+}
+
+const carro1 = new Carro("Toyota", "Corolla")
+carro1.acelerar()
+carro1.acelerar()
+carro1.acelerar()
+carro1.frear()
+
+carro1.mostrarVelocidade()
