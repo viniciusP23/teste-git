@@ -397,3 +397,30 @@ carro1.acelerar()
 carro1.frear()
 
 carro1.mostrarVelocidade()
+
+// 
+
+const produtosCar = [
+    {nome: "pizza calabresa", preco: 40},
+    {nome: "pizza portuguesa", preco: 60},
+    {nome: "pizza mussarela", preco: 35},
+    {nome: "pizza doce", preco: 50},
+    {nome: "pizza calabresa II", preco: 47},
+]
+
+// const produtosAcima40 = produtosCar.filter(p => p.preco > 40) 
+// console.log(produtosAcima40)
+
+
+let produtosAcimaDe40 = []
+
+for(let i = 0; i < produtosCar.length; i++) {
+    
+    const valor = produtosCar[i]
+
+    if(valor.preco > 40) {
+        produtosAcimaDe40.push(valor)
+    }
+}
+
+console.log(produtosAcimaDe40)
