@@ -52,3 +52,98 @@ function aplicarcupom(total, cupom) {
 
 console.log(aplicarcupom(200, "DESC10"))
 console.log(aplicarcupom(200, "DESC20"))
+
+///////////////
+
+
+const produtos = document.querySelectorAll(".valor")
+const totalTexto = document.getElementById("total")
+const carteira = document.getElementById("carteira")
+
+let totalProdutos = 0
+
+produtos.forEach(produto => {
+    produto.addEventListener("click", () => {
+
+        totalProdutos += Number(produto.value)
+        const saldo = carteira.value
+        
+        if(totalProdutos > saldo) {
+            alert("saldo insuficiente")
+            return
+        }
+
+        totalTexto.textContent = `Saldo: R$${totalProdutos}`
+    })
+})
+
+// 
+
+const additem = document.getElementById("addItem")
+const btnAdd = document.getElementById("adicionar")
+const itens = document.getElementById("itens")
+
+btnAdd.addEventListener("click", () => {
+
+    const adicionar = additem.value
+
+    if(adicionar === "") {
+        alert("preencha o campo")
+        return
+    }
+
+    const li = document.createElement("li")
+
+    li.textContent = adicionar
+
+    li.addEventListener("click", () => {
+        li.remove()
+    })
+
+    itens.appendChild(li)
+    additem.value = ""
+})
+
+// 
+
+
+const btnCompras = document.querySelectorAll(".cart")
+const caixa = document.getElementById("caixa")
+const inputSaldo = document.getElementById('saldo')
+
+let caixaTotal = 0
+
+const btnPagar = document.createElement("button")
+btnPagar.textContent = "pagar"
+document.body.appendChild(btnPagar)
+
+btnCompras.forEach(produto => {
+
+    produto.addEventListener("click", () => { 
+
+        caixaTotal += Number(produto.value)
+      
+        caixa.textContent = `Caixa: $${caixaTotal}`
+
+    })
+})
+
+btnPagar.addEventListener("click", () => {
+
+    let minhaCarteira = Number(inputSaldo.value)
+
+    if(minhaCarteira >= caixaTotal) {
+        
+        minhaCarteira -= caixaTotal
+
+        inputSaldo.value = minhaCarteira
+
+        caixaTotal = 0
+
+        caixa.textContent = "Caixa: 0"
+    }else {
+        alert("Saldo insuficiente!")
+    }
+
+})
+

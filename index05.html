@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pb-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+    }
+
+   main button {
+    padding: 20px;
+    background-color: rgb(82, 197, 98);
+    color: #ffffff;
+    cursor: pointer;
+   }
+
+   .cards {
+        display: flex;
+        gap: 10px;
+        margin-top: 30px;
+
+        .card {
+            padding: 20px;
+            border: 2px solid #000;
+            text-align: center;
+        }
+   }
+
+</style>
+<body style="background-color: rgb(170, 164, 157);">
+
+<main>
+
+    <input id="carteira" type="number" value="300">
+
+    <button class="valor" value="50">$50</button>
+    <button class="valor"  value="100">$100</button>
+    <button class="valor" value="200">$200</button>
+
+    <p id="total">Total: 0</p>
+
+    <input id="addItem" type="text">
+    <button id="adicionar">adicionar</button>
+    <ul id="itens"></ul>
+
+    <!--  ============================================ -->
+
+    <div class="cards">
+
+        <label for="">💳</label>
+        <input id="saldo" type="number">
+
+        <div class="card">
+            <p>🍇</p>
+            <h3>Uva</h3>
+            <p>10$</p>
+            <button value="10" class="cart">Comprar</button>
+        </div>
+        <div class="card">
+            <p>🍋‍🟩</p>
+            <h3>Limão</h3>
+            <p>$5</p>
+            <button value="5" class="cart">Comprar</button>
+        </div>
+        <div class="card">
+            <p>🍊</p>
+            <h3>Tangerina</h3>
+            <p>15$</p>
+            <button value="15" class="cart">Comprar</button>
+        </div>
+
+        <p id="caixa">Caixa: 0</p>
+    </div>
+
+
+</main>
+    
+</body>
+<script src="logica13.js"></script>
+</html>
