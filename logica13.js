@@ -147,3 +147,85 @@ btnPagar.addEventListener("click", () => {
 
 })
 
+// 
+
+const botoes = document.querySelectorAll(".PPT")
+const placar = document.getElementById("placar")
+
+botoes.forEach(btn => {
+    btn.addEventListener("click", () => {
+
+        const metodos = ["pedra", "papel", "tesoura"]
+        const maquina = metodos[Math.floor(Math.random() * metodos.length)]
+
+        const eu = btn.value
+
+        if(eu === maquina) {
+            placar.innerHTML = "Empate"
+        } else if(
+            (eu === "pedra" && maquina === "tesoura") ||
+            (eu === "papel" && maquina === "pedra") ||
+            (eu === "tesoura" && maquina === "papel")
+        ) {
+            placar.innerHTML = `você ganhou! Eu: ${eu} Máquina: ${maquina}`
+        }else {
+            placar.innerHTML = ` Máquina ganhou! Eu: ${eu} eu: ${maquina}`
+        }
+
+        
+    })
+})
+
+// 
+
+
+const botao = document.getElementById("converter")
+
+const valor = document.getElementById("valor")
+const origem = document.getElementById("origem")
+const destino = document.getElementById("destino")
+
+const resultado = document.getElementById("resultado")
+
+
+// valores fictícios
+const moedas = {
+    BRL: {
+        USD: 0.18,
+        EUR: 0.16
+    },
+
+    USD: {
+        BRL: 5.50,
+        EUR: 0.90
+    },
+
+    EUR: {
+        BRL: 6.10,
+        USD: 1.10
+    }
+}
+
+
+
+botao.addEventListener("click", () => {
+
+
+    let valorDigitado = Number(valor.value)
+
+    let moedaOrigem = origem.value
+
+    let moedaDestino = destino.value
+
+
+    let cotacao = moedas[moedaOrigem][moedaDestino]
+
+
+    let convertido = valorDigitado * cotacao
+
+
+    resultado.innerHTML =
+    `${valorDigitado} ${moedaOrigem} = ${convertido.toFixed(2)} ${moedaDestino}`
+
+
+})

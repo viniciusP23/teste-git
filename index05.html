@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pb-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,14 +21,14 @@
         height: 100vh;
     }
 
-   main button {
-    padding: 20px;
-    background-color: rgb(82, 197, 98);
-    color: #ffffff;
-    cursor: pointer;
-   }
+    main button {
+        padding: 20px;
+        background-color: rgb(82, 197, 98);
+        color: #ffffff;
+        cursor: pointer;
+    }
 
-   .cards {
+    .cards {
         display: flex;
         gap: 10px;
         margin-top: 30px;
@@ -37,57 +38,91 @@
             border: 2px solid #000;
             text-align: center;
         }
-   }
-
+    }
 </style>
+
 <body style="background-color: rgb(170, 164, 157);">
 
-<main>
+    <main>
 
-    <input id="carteira" type="number" value="300">
+        <input id="carteira" type="number" value="300">
 
-    <button class="valor" value="50">$50</button>
-    <button class="valor"  value="100">$100</button>
-    <button class="valor" value="200">$200</button>
+        <button class="valor" value="50">$50</button>
+        <button class="valor" value="100">$100</button>
+        <button class="valor" value="200">$200</button>
 
-    <p id="total">Total: 0</p>
+        <p id="total">Total: 0</p>
 
-    <input id="addItem" type="text">
-    <button id="adicionar">adicionar</button>
-    <ul id="itens"></ul>
+        <input id="addItem" type="text">
+        <button id="adicionar">adicionar</button>
+        <ul id="itens"></ul>
 
-    <!--  ============================================ -->
+        <!--  ============================================ -->
 
-    <div class="cards">
+        <div class="cards">
 
-        <label for="">💳</label>
-        <input id="saldo" type="number">
+            <label for="">💳</label>
+            <input id="saldo" type="number">
 
-        <div class="card">
-            <p>🍇</p>
-            <h3>Uva</h3>
-            <p>10$</p>
-            <button value="10" class="cart">Comprar</button>
+            <div class="card">
+                <p>🍇</p>
+                <h3>Uva</h3>
+                <p>10$</p>
+                <button value="10" class="cart">Comprar</button>
+            </div>
+            <div class="card">
+                <p>🍋‍🟩</p>
+                <h3>Limão</h3>
+                <p>$5</p>
+                <button value="5" class="cart">Comprar</button>
+            </div>
+            <div class="card">
+                <p>🍊</p>
+                <h3>Tangerina</h3>
+                <p>15$</p>
+                <button value="15" class="cart">Comprar</button>
+            </div>
+
+            <p id="caixa">Caixa: 0</p>
         </div>
-        <div class="card">
-            <p>🍋‍🟩</p>
-            <h3>Limão</h3>
-            <p>$5</p>
-            <button value="5" class="cart">Comprar</button>
-        </div>
-        <div class="card">
-            <p>🍊</p>
-            <h3>Tangerina</h3>
-            <p>15$</p>
-            <button value="15" class="cart">Comprar</button>
-        </div>
-
-        <p id="caixa">Caixa: 0</p>
-    </div>
 
 
-</main>
-    
+        <button class="PPT" value="pedra">Pedra</button>
+        <button class="PPT" value="papel">Papel</button>
+        <button class="PPT" value="tesoura">Tesoura</button>
+
+        <p id="placar"></p>
+
+        <h1>Conversor de Moedas</h1>
+
+        <input id="valor" type="number" placeholder="Digite o valor">
+
+
+        <select id="origem">
+            <option value="BRL">Real</option>
+            <option value="USD">Dólar</option>
+            <option value="EUR">Euro</option>
+        </select>
+
+
+        <select id="destino">
+            <option value="USD">Dólar</option>
+            <option value="BRL">Real</option>
+            <option value="EUR">Euro</option>
+        </select>
+
+
+        <button id="converter">
+            Converter
+        </button>
+
+
+        <h2 id="resultado"></h2>
+
+
+    </main>
+
 </body>
 <script src="logica13.js"></script>
+
 </html>
