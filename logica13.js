@@ -206,8 +206,6 @@ const moedas = {
     }
 }
 
-
-
 botao.addEventListener("click", () => {
 
 
