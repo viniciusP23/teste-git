@@ -461,3 +461,142 @@ const cc = new ContaCorrente("vinicius", 1000)
 cc.sacar(100)
 
 cc.mostrarSaldo()
+
+///////
+
+class AnimaisZoo {
+    constructor(nome, peso) {
+        this.nome = nome
+        this.peso = peso
+    }
+
+    comer() {
+        console.log(`${this.nome} está comendo.`)
+    }
+
+    emitirSom() {
+        console.log(`${this.nome}`)
+    }
+}
+
+class Mamifero extends AnimaisZoo {
+
+    amamentar() {
+        console.log(`${this.nome} pode amamentar seus filhotes.`)
+    }
+}
+
+    // animais mamiferos
+class Leao extends Mamifero {
+
+    emitirSom() {
+        console.log("Roooooar!")
+    }
+}
+
+class Gato extends Mamifero {
+
+    emitirSom() {
+        console.log("Miaauu!")
+    }
+}
+
+class Aves extends AnimaisZoo {
+
+    voar() {
+        console.log(`o ${this.nome} esta voando`)
+    }
+}
+
+class Peixes extends AnimaisZoo {
+
+    nadar() {
+        console.log(`o ${this.nome} esta nandando no aquário`)
+    }
+}
+
+const mel = new Gato("Mel", 12)
+
+mel.comer()
+mel.amamentar()
+mel.emitirSom()
+
+/////// Polimorfismo ///////
+
+class Forma {
+    
+    desenhar() {
+        console.log("desenhando uma forma")
+    }
+}
+
+class Quadrado extends Forma {
+
+    desenhar() {
+        console.log("desenhando um quadrado")
+    }
+}
+
+class Circulo extends Forma {
+
+    desenhar() {
+        console.log("desenhando um círculo")
+    }
+}
+
+class Triangulo extends Forma {
+
+    desenhar() {
+        console.log("desenhando um triânculo")
+    }
+}
+
+const formatos = [
+    new Quadrado(),
+    new Circulo(),
+    new Triangulo()
+]
+
+for(let formas of formatos) {
+    formas.desenhar()
+}
+
+//////
+
+class Notificacao {
+    enviar() {
+        console.log("enviando notificação")
+    }
+}
+
+
+class Email extends Notificacao {
+
+    enviar() {
+        console.log("enviando um E-amil")
+    }
+}
+
+class Sms extends Notificacao {
+
+    enviar() {
+        console.log("enviando um SMS")
+    }
+}
+
+class Direct extends Notificacao {
+
+    enviar() {
+        console.log("enviando um Direct")
+    }
+}
+
+const notificacoes = [
+    new Email(),
+    new Sms(),
+    new Direct()
+]
+
+for(let notificacao of notificacoes) {
+    notificacao.enviar()
+}
