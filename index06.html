@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de produtos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 40px;
+        }
+
+        .filtros {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        input,
+        select {
+            padding: 10px;
+            font-size: 16px;
+        }
+
+        #produtos {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .card {
+            border: 1px solid #ddd;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Produtos</h1>
+
+    <div class="filtros">
+
+        <input
+            type="text"
+            id="pesquisa"
+            placeholder="Pesquisar produto..."
+        >
+
+        <select id="categoria">
+            <option value="todos">Todas as categorias</option>
+            <option value="Tênis">Tênis</option>
+            <option value="Camiseta">Camiseta</option>
+        </select>
+
+    </div>
+
+    <div id="produtos"></div>
+
+
+    <script>
+
+        const produtos = [
+            {
+                id: 1,
+                nome: "Tênis Nike Air",
+                categoria: "Tênis",
+                preco: 399
+            },
+
+            {
+                id: 2,
+                nome: "Tênis Adidas Run",
+                categoria: "Tênis",
+                preco: 299
+            },
+
+            {
+                id: 3,
+                nome: "Camiseta Nike",
+                categoria: "Camiseta",
+                preco: 149
+            },
+
+            {
+                id: 4,
+                nome: "Camiseta Adidas",
+                categoria: "Camiseta",
+                preco: 129
+            }
+        ];
+
+
+        const input = document.querySelector("#pesquisa");
+
+        const categoria = document.querySelector("#categoria");
+
+        const container = document.querySelector("#produtos");
+
+
+        function mostrarProdutos() {
+
+            const texto = input.value.toLowerCase();
+
+            const categoriaSelecionada = categoria.value;
+
+
+            const produtosFiltrados = produtos.filter(produto => {
+
+                const correspondeNome = produto.nome
+                    .toLowerCase()
+                    .includes(texto);
+
+
+                const correspondeCategoria =
+                    categoriaSelecionada === "todos" ||
+                    produto.categoria === categoriaSelecionada;
+
+
+                return correspondeNome && correspondeCategoria;
+            });
+
+
+            container.innerHTML = "";
+
+
+            produtosFiltrados.forEach(produto => {
+
+                container.innerHTML += `
+                    <div class="card">
+
+                        <h2>${produto.nome}</h2>
+
+                        <p>Categoria: ${produto.categoria}</p>
+
+                        <strong>
+                            R$ ${produto.preco}
+                        </strong>
+
+                    </div>
+                `;
+
+            });
+        }
+
+
+        input.addEventListener("input", mostrarProdutos);
+
+
+        categoria.addEventListener("change", mostrarProdutos);
+
+
+        mostrarProdutos();
+
+    </script>
+
+</body>
+
+</html>
+
