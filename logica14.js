@@ -66,3 +66,50 @@ if(usuarioCadastrado !== usuarioDigitado) {
 }else {
     console.log("Login realizado!")
 }
+
+//===============
+
+let idade = 20
+
+if(idade <= 12) {
+    console.log("Criança")
+}else if(idade <= 17) {
+    console.log("Adolecente")
+}else if(idade < 60) {
+    console.log("Adulto")
+}else {
+    console.log("Idoso")
+}
+
+//===============
+
+let valorCompra = 350
+let cupom = "DESCONTO10"
+ 
+if(valorCompra >= 300 && cupom === "DESCONTO10") {
+    valorCompra -= valorCompra * 0.10
+    console.log("Desconto 10% aplicado")
+}else if(valorCompra >= 300 && cupom !== "DESCONTO10") {
+    valorCompra -= valorCompra * 0.05
+    console.log("Desconto 5% aplicado")
+}else {
+    console.log("Sem desconto")
+}
+
+console.log("valor da compra:", valorCompra)
+
+//===============
+
+let usuario = "vinicius"
+let userIdade = 22
+let ativo = true
+
+if(userIdade >= 18 && !ativo) {
+    console.log("Acesso negado: conta inativa.")
+}else if(userIdade >= 18 && ativo) {
+    console.log("Acesso permitido!")
+}else {
+    console.log("Acesso negado: idade insuficiente.")
+}
+
+console.log(usuario, userIdade, ativo)
