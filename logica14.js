@@ -368,3 +368,187 @@ let resultadoSoma = calcular(10, 5, "divisao")
 console.log(resultadoSoma)
 
 //===============
+
+function maiorNumero(num1, num2) {
+
+    if(num1 > num2) {
+        return num1
+    }else if(num1 < num2) {
+        return num2
+    }else {
+        return "Os números são iguais"
+    }
+}
+
+let maiorNumResultado = maiorNumero(10, 20)
+console.log("maior numero:", maiorNumResultado)
+
+//===============
+
+function verificarNumero(numero) {
+
+    if(numero > 0) {
+        return "Número positivo"
+    }else if(numero < 0) {
+        return "Número negativo"
+    }else {
+        return "Número zero"
+    }
+}
+
+let verificarResultado = verificarNumero(-5)
+console.log(verificarResultado)
+
+//===============
+
+function calcularMedia(nota1, nota2, nota3) {
+
+    let media = nota1 + nota2 + nota3
+    let mediaTotal = media / 3
+    
+    if(mediaTotal >= 7) {
+        return "Aprovado"
+    }else if(mediaTotal >= 5 && mediaTotal < 7) {
+        return "Recuperação"
+    }else {
+        return "Reprovado"
+    }
+
+}
+
+let calcularMediaFinal = calcularMedia(7, 8, 6)
+console.log(calcularMediaFinal)
+
+//===============
+
+function verificarParImpar(numero) {
+
+    if(numero % 2 === 0) {
+        return "Número par"
+    }else {
+        return "Número ímpar"
+    }
+}
+
+let parImpar = verificarParImpar(7)
+console.log(parImpar)
+
+//===============
+
+function maiorDetres(num1, num2, num3) {
+
+    if(num1 > num2 && num1 >num3) {
+        return num1
+    }else if(num2 > num1 && num2 > num3) {
+        return num2
+    }else {  
+        return num3  
+    }
+}
+
+let maiorDosTres = maiorDetres(10, 25, 155)
+console.log(maiorDosTres)
+
+//===============
+
+function verificarSenha(senha) {
+
+    if(senha.length < 6) {
+        return "Senha muito curta"
+    }else {
+        return "Senha válida"
+    }
+}
+
+let senhaResultado = verificarSenha("123456")
+console.log(senhaResultado)
+
+//===============
+
+function verificarCadastro(idade, documento) {
+
+    if(idade < 18) {
+        return "Cadastro negado: menor de idade"
+    }else if(idade >= 18 && !documento) {
+        return "Cadastro negado: documento obrigatório"
+    }else {
+        return "Cadastro realizado"
+    }
+}
+
+let resultadoCadastro = verificarCadastro(20, true)
+console.log(resultadoCadastro)
+
+//===============
+
+function verificarCompra(preco, estoque, clienteVip) {
+
+    if(estoque <= 0) {
+        return "Produto indisponível"
+    }else if(estoque > 0 && clienteVip) {
+        return preco -= preco * 0.10
+    }else {
+        return preco
+    }
+}
+
+let resultadoCompra = verificarCompra(200, 5, true)
+console.log(resultadoCompra)
+
+//===============
+
+function calcularDesconto(preco) {
+
+    if(preco < 300) {
+        return preco
+    }else if(preco >= 300 && preco < 500) {
+        return preco -= preco * 0.10
+    }else {
+        return preco -= preco * 0.20
+    }
+}
+
+let desconto = calcularDesconto(600) 
+console.log(desconto)
+
+//===============
+
+function calcularPedido(valorCompra, clienteVip, cupom, formaPagamento) {
+
+   if(valorCompra <= 0) {
+        return "Valor inválido"
+   }
+
+   let valorFinal = valorCompra
+   let frete = 20
+
+   if(clienteVip) {
+        if(valorFinal >= 500) {
+            valorFinal -= valorFinal * 0.20
+        }else {
+            valorFinal -= valorFinal * 0.10
+        }
+   }
+
+   if(!clienteVip && cupom === "DESCONTO10") {
+        valorFinal -= valorFinal * 0.10
+   }
+
+   if(valorFinal < 300) {
+        valorFinal += frete
+   }
+  
+   if(formaPagamento === "pix") {
+        valorFinal -= valorFinal * 0.05
+   }else if(formaPagamento === "cartao") {
+        "sem desconto" 
+   }else {
+        return "forma de pagamento inválida"
+   }
+
+   return valorFinal
+       
+}
+
+let resultadoPedido = calcularPedido(600, true, "DESCONTO10", "pix")
+console.log(resultadoPedido)
