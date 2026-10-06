@@ -837,3 +837,181 @@ function buscarProdutosDev(produtos, categoria, precoMaximo, estoqueMinimo) {
 
 let produtosDevBuscar = buscarProdutosDev(produtosDev, "hardware", 500, 5)
 console.log(produtosDevBuscar)
+
+//===============
+
+const produtosDev2 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+function buscarProdutoPorNome(produtos, texto) {
+
+    let produtosencontrados = []
+
+    for(let i = 0; i < produtos.length; i++) {
+        let product = produtos[i]
+
+        if(product.nome.toLowerCase().includes(texto.toLowerCase())) {
+            produtosencontrados.push(product)
+        }
+    }
+
+    return produtosencontrados
+}
+
+let resultadoBuscar = buscarProdutoPorNome(produtosDev2, "o")
+console.log(resultadoBuscar)
+
+//===============
+
+const produtosDev3 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+function buscarProduto(produtos, texto) {
+
+    let produtosEncontrados = []
+
+    for(let i = 0; i < produtos.length; i++) {
+
+        let products = produtos[i]
+
+        if(products.nome.toLowerCase().includes(texto.toLowerCase()) || products.categoria.toLowerCase().includes(texto.toLowerCase())) {
+            produtosEncontrados.push(products)
+        }
+    }
+
+    return produtosEncontrados
+
+}
+
+let resultadosDeProdutos = buscarProduto(produtosDev3, "hard")
+console.log(resultadosDeProdutos)
+
+//===============
+
+const produtosDev4 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+function buscarProdutos2(produtos, texto, precoMaximo) {
+
+    let encontrarProdutos = []
+
+    for(let i = 0; i < produtos.length; i++) {
+
+        let product = produtos[i]
+
+        if(
+           ( product.nome.toLowerCase().includes(texto.toLowerCase()) ||
+            product.categoria.toLowerCase().includes(texto.toLowerCase())
+        ) && 
+            product.preco <= precoMaximo
+        ) {
+            encontrarProdutos.push(product)
+        }
+    }
+
+    return encontrarProdutos
+}
+
+let encontrarProduto = buscarProdutos2(produtosDev4, "o", 200)
+console.log(encontrarProduto)
+
+//===============
+
+const produtosDev5 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+function buscarProduto3(produtos, texto, precoMaximo, estoqueMinimo){
+
+    let encontrarProdutos = []
+
+    for(let i = 0; i < produtos.length; i++) {
+        let product = produtos[i]
+
+        if(
+            (product.nome.toLowerCase().includes(texto.toLowerCase()) ||
+            product.categoria.toLowerCase().includes(texto.toLowerCase())
+        ) &&
+
+        (product.preco <= precoMaximo)&&
+        (product.estoque >= estoqueMinimo)
+
+        ) {
+            encontrarProdutos.push(product)
+        }
+    }
+
+    return encontrarProdutos
+}
+
+let resultadoEncontrado = buscarProduto3(produtosDev5, "o", 500, 5)
+console.log(resultadoEncontrado)
+
+//===============
+
+const produtosDev6 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+function buscarProdutoPorId(produtos, id) {
+
+    for(let i = 0; i < produtos.length; i++) {
+        let product = produtos[i]
+
+        if(product.id === id)  {
+            return product
+        }
+    }
+
+    return "Produto não encontrado"
+}
+
+let buscarId = buscarProdutoPorId(produtosDev6, 3)
+console.log(buscarId)
+
+//===============
+
+const produtosDev7 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+function atualizarPreco(produtos, id, novoPreco) {
+
+    for(let i = 0; i < produtos.length; i++) {
+        let product = produtos[i]
+
+        if(product.id === id) {
+            product.preco = novoPreco
+            return product
+        }
+    }
+
+    return "Produto não encontrado"
+}
+
+let atualizarProduto = atualizarPreco(produtosDev7, 3, 750)
+console.log(atualizarProduto)
+
+//===============
+
