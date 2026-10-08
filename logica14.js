@@ -1015,3 +1015,93 @@ console.log(atualizarProduto)
 
 //===============
 
+const produtosDev8 = [
+    { id: 1, nome: "Teclado", categoria: "periferico", preco: 150, estoque: 10 },
+    { id: 2, nome: "Mouse", categoria: "periferico", preco: 80, estoque: 0 },
+    { id: 3, nome: "Monitor", categoria: "hardware", preco: 900, estoque: 5 },
+    { id: 4, nome: "SSD", categoria: "hardware", preco: 450, estoque: 8 }
+]
+
+
+function removerProduto(produtos, id) {
+
+    for(let i = 0; i < produtos.length; i++) {
+
+        let product = produtos[i]
+
+        if(product.id === id) {
+            produtos.splice(i, 1)
+            return "Produto removido"
+        }
+    }
+
+     return "Produto não encontrado"
+}
+
+let resultadoRemove = removerProduto(produtosDev8, 4)
+console.log(resultadoRemove)
+
+//===============
+
+function atualizarEstoque(produtos, id, novoEstoque) {
+
+    for(let i = 0; i < produtos.length; i++) {
+
+        let product = produtos[i]
+
+        if(product.id === id) {
+            product.estoque = novoEstoque
+            return product
+        }
+    }
+
+    return "Produto não encontrado"
+
+}
+
+let resultadoEstoque = atualizarEstoque(produtosDev8, 3, 15)
+console.log("estoque atualizado:", resultadoEstoque)
+
+//===============
+
+function aplicarDescontoCategoria(produtos, categoria, percentual) {
+
+    for(let i= 0; i < produtos.length; i++) {
+
+        let product = produtos[i]
+
+        if(product.categoria === categoria) {
+            product.preco -= product.preco * (percentual / 100)
+        }
+    }
+
+    return produtos
+}
+
+let resultadoDesconto = aplicarDescontoCategoria(produtosDev8, "hardware", 10)
+console.log("desconto aplicado:",resultadoDesconto)
+
+//===============
+
+function aplicarAumentoCategoria(produtos, categoria, percentual) {
+
+    let encontrou = false
+
+    for(let i = 0; i < produtos.length; i++) {
+        let product = produtos[i]
+
+        if(product.categoria === categoria) {
+            product.preco += product.preco * (percentual / 100)
+            encontrou = true
+        }
+    }
+    
+    if(encontrou) {
+        return produtos
+    }
+
+    return "Categoria não encontrada"
+}
+
+let resultadoAumento = aplicarAumentoCategoria(produtosDev8, "hardware", 10)
+console.log("resultado aumentado:", resultadoAumento)
