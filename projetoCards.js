@@ -21,15 +21,20 @@ cartas.forEach(cart => {
     console.log(cart.poder)
 })
 
-if(cartas[0].poder === cartas[2].poder) {
-    console.log("Empate")
-}else {
-    if(cartas[0].poder > cartas[2].poder) {
-        console.log("Vencedor:", cartas[0].nome)
-    }else {
-        console.log("Vencedor:", cartas[2].nome)
-    }
+
+function escolherCartaAleatoria() {
+
+    const escolher = Math.floor(Math.random() * cartas.length)
+
+    const escolhaDaMaquina = cartas[escolher]
+    
+    return escolhaDaMaquina
 }
+
+const jogador = cartas[1]
+
+let vitoriasJogador = 0
+let vitoriasMaquina = 0
 
 function duelar(carta1, carta2) {
 
@@ -37,19 +42,20 @@ function duelar(carta1, carta2) {
         return "Empate"
     }else {
         if(carta1.poder > carta2.poder) {
-            return carta1.nome
+            vitoriasJogador += 1
+            return "O jogador venceu!"
         }else {
-            return carta2.nome
+            vitoriasMaquina += 1
+            return "A máquina venceu!"
         }
     }
 }
 
-console.log(duelar(cartas[0], cartas[2]))
-
-function escolherCartaAleatoria() {
-
-    const escolher = Math.floor(Math.random() * cartas.length)
-     return escolher
+for(let i = 0; i < 3; i++) {
+    const maquina = escolherCartaAleatoria()
+    console.log(duelar(jogador, maquina))
 }
 
-console.log(escolherCartaAleatoria())
+console.log("jogador:",vitoriasJogador)
+console.log("maquina:",vitoriasMaquina)
+
