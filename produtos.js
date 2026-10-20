@@ -123,3 +123,7 @@ function encontrarMelhorVendedor(vendas) {
 }
 
 console.log(encontrarMelhorVendedor(vendas))
+
+
+// ---------------------------------
+
